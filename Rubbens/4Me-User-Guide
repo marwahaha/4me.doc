@@ -1,18 +1,18 @@
 [TOC]
 #4Me 
 4Me est une IHM intégratrice de plusieurs services. 
-Chacun des services est adapté à l'utilisateur.
-4 types d'utilisateurs sont définis
+Chacun des services est adapté à chacun des différents utilisateurs.
+4 types d'utilisateurs sont définis :
 
 ##SPVR OPS
-Chef de Salle
+Le client **SPVR OPS** est le client du Chef de Salle situé à droite de l'écran ARTEMIS.
 ##SPVR Tech
-Superviseur Technique
+Le client de **SPVR Tech" est le client du superviseur technique, sa version est en cours de développement et son tulisiation sera détaillé dans une prochaine version du manuel utilisateur.
+
 ##FMP
-ACDS et EAP
+Le client **SPVR OPS** est le client de l'ACDS ou de l'Extended ATC Planner, ces fonctionnalités sont limités dans la première version de 4Me, mais un développement futur permettra de spécialiser l'IHM FMP, pour répondre aux besoins d'échange d'informations entre la FMP et les CWP.
 ##CWP
-Positions de contrôle. Chacune de position de contrôle ouverte filtre les services et les données en fonction des besoins
-   opérationnels.
+Les clients **CWP** sont les clients Positions de contrôle. Chacune de position de contrôle ouverte filtre les services et les données en fonction des besoins opérationnels.
 
 Les droits des utilisateurs sont différents pour chaque service et seront décrit dans le manuel utilisateur ci dessous.
 
