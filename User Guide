@@ -14,7 +14,7 @@ Le client **SPVR OPS** est le client de l'ACDS ou de l'Extended ATC Planner, ces
 ##CWP
 Les clients **CWP** sont les clients Positions de contrôle. Chacune de position de contrôle ouverte filtre les services et les données en fonction des besoins opérationnels.
 
-Les droits des utilisateurs sont différents pour chaque service et seront décrit dans le manuel utilisateur ci dessous.
+Les droits des utilisateurs sont différents pour chaque service et seront décrits dans le manuel utilisateur ci dessous.
 
 #4Me Core
 ##Présentation générale
@@ -44,10 +44,11 @@ Le coin supérieur droit *"Status Corner"* contient des boutons d'action de 4Me 
 #####Bouton Refresh :
 En cas de comportement anormal de 4Me le bouton **Refresh** permet de rafraîchir la page en cours. 
 La page est rafraîchie automatiquement toutes le 5 secondes (TBC)
-Le réflexe utilisateur lorsqu'il rencontre un comportement non prévu de 4Me est le click sur le bouton **Refresh** avant tout report vers le chef de salle. La plupart des problèmes peuvent être résolus par un simple refresh.
+Si un comportement anormal de 4Me est détécté le premier réflexe de l'utilisateur est de rafraichir la page.Un click sur le bouton **Refresh** permet dans la plus part des cas de résoudre le dysfonctionnement. En cas d'echec de la procédure, il est nécessaire d'avertit le chef de salle.
 
 #####Bouton d'information de statut de service :
 Ce bouton cliquable indique l'état de fonctionnement de 4Me.
+Un click sur le bouton d'information de service permet de connaitre plus en detail le type de dysfonctionnement détécté.
 
 ![Service Status Button](http://i.imgur.com/Zm9oMOWs.png) Fonctionnement est normal
 
@@ -55,7 +56,8 @@ Ce bouton cliquable indique l'état de fonctionnement de 4Me.
 
 L'état des  services 4 Me (4Me-Core, XMAN, ARCID, MAPPING) sont affichés par ce bouton.
 
-Le bouton de dysfonctionnement s'affiche dès qu'un des services rencontre un dysfonctionnement. Un clic sur ce bouton permet de d'aller plus en details dans le type de dysfonctionnement rencontré.
+Le bouton de dysfonctionnement s'affiche dès qu'un des services rencontre un dysfonctionnement. 
+Un clic sur ce bouton ouvre une fenêtre détaillant les différents états de services.
 
  - **CWP :** Sur les positions de contrôle, le principe est d'éviter toute recherche de panne. Un seul niveau d'information est affiché pour connaitre le ou les services 4Me affectés par le dysfonctionnement.
 Dans le cas où un seul service serait affecté, les autres peuvent continuer à être utilisés.
@@ -86,15 +88,15 @@ Un click sur le service permet le basculement sur la page du service associé.
 Le service grisé correspond au service en fonction.
 
 ####Notifications
-Les notifications sont pour utilisées uniquement pour le service XMAN. 
+Les notifications ne sont utilisées dans la première version que pour le service XMAN. 
 
 Une pastille orange associée à un chiffre indique le nombre d'actions XMAN à réaliser.
 
-Ce nombre d'action XMAN à réaliser correspond aux nombre d'avions à réduire qui sont effectivement dans le secteur.
+Ce nombre d'action XMAN à réaliser correspond au nombre d'avions à réduire qui sont à l'interieur du volume d'intérêt du secteur.
 
 ![Imgur](http://i.imgur.com/qc0O0KV.png)
 
-Lorsque toutes les actions XMAN ont été réalisées la notification disparait du bandeau latéral.
+Lorsque toutes les actions XMAN ont été réalisées, la notification disparait du bandeau latéral.
 # MAPPING
 ## Presentation générale
 Le service MAPPING permet de dégrouper ou regrouper les IHM 4Me.
@@ -112,11 +114,14 @@ Pour réaliser la cohérence secteur ouverts/client 4Me, le service MAPPING prop
 
 ## Fonctionnalités
 ###Configuration de la salle de contrôle
-####Modification de la configuration de la salle de contrôle!
+####Modification de la configuration de la salle de contrôle 
 La salle de contrôle est représenté graphiquement sur le service MAPPING, seuls les zones 1-2-3 de la salle de contrôle sont affichées.
 Le positionnement graphique correspond à la vue des secteurs physiques lorsque le chef de salle regarde l'écran 4Me.
 
-Le regroupement/dégroupement d'un ou plusieurs secteurs se fait par la selection de la position choisie et dans une logique d'addition.
+Le regroupement/dégroupement d'un ou plusieurs secteurs se fait par la selection de la position choisie dans une logique d'addition.
+La logique d'addition repose sur le principe d'ajout de secteurs nominuax. 
+Pour créér un regroupement, on selectionnera donc la position recevante et on y ajoutera le ou les secteur que l'on souhaitera regrouper.
+Pour dégrouper un secteur, on selectionnera la position sur laquelle on souhaite ouvir un nouveau secteur et on y ajoutera le ou les secteurs que l'on souhaite dégrouper.
 
 Un click sur la position permet l'ouverture d'une boite d'action.
 
@@ -151,17 +156,19 @@ Dans l'*Information corner* la configuration choisie s'affiche dynamiquement ave
 ![Imgur](http://i.imgur.com/YaNZL00.png)
 ####Algorithme de suggestion de regroupement/dégroupement
 
-L'algorithme de suggestion propose les solutions d'ouverture ou de regroupement secteur les plus adaptés aux besoins opérationnels.
+L'algorithme de suggestion propose les solutions d'ouvertures ou de regroupement secteur les plus adaptées aux besoins opérationnels.
 
-Le principe repose sur une analyse instantannée de la configuration des secteurs ouverts et sur la position choisie pour effectuer le regroupement/dégroupement.
+Le principe repose sur une analyse instantannée de la configuration des secteurs ouverts et sur la position séléctionnée par le chef de salle pour effectuer le regroupement/dégroupement.
 
-L'algorithme proposera des regroupements/dégroupements URME dans la zone 2 et des regroupements/dégroupements URMN dans la zone 3
+L'algorithme proposera donc en priorité des regroupements/dégroupements URME dans la zone 2 et des regroupements/dégroupements URMN dans la zone 3
 ###Position indisponible
 ![CWP Enabled](http://i.imgur.com/spoGPxb.png)
 
 Le Mapping 4Me permet de rendre indisponible un client 4Me.
 
-Dès lors qu'une CWP est déclarée comme indisponible, 4Me peut aussi être rendu indisponible par un click sur la position et un glissement du toggle **CWP Enabled**
+Dès lors qu'une CWP est déclarée comme indisponible, 4Me doit aussi être rendu indisponible afin d'assurer la cohérence de la configurationd e salle avec les autres systèmes.
+Un click sur la position et un glissement du toggle **CWP Enabled** permet de rendre indisponible la position.
+De même pôur rendre disponible une position indisponible, un glissement de toggle **CWP Enabled** rendra la position à nouveau disponible.
 
 ![Imgur](http://i.imgur.com/GET6qkqm.png)
 
