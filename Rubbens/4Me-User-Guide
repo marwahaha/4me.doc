@@ -382,5 +382,10 @@ Lorsque la procédure **MCS** est activée, plus aucun advisory XMAN n'est pouss
 
 ![Imgur](http://i.imgur.com/DNw0CKd.png)
 
+#ARCID
+##Présentation Générale
+Le service ARCID permet l'accès au profil 4D ETFMS, c'est à dire au plan de vol tel qu'accepté par l'ETFMS.
+##Fonctionnalités
+
 
 
