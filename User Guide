@@ -44,11 +44,11 @@ Le coin supérieur droit *"Status Corner"* contient des boutons d'action de 4Me 
 #####Bouton Refresh :
 En cas de comportement anormal de 4Me le bouton **Refresh** permet de rafraîchir la page en cours. 
 La page est rafraîchie automatiquement toutes le 5 secondes (TBC)
-Si un comportement anormal de 4Me est détécté le premier réflexe de l'utilisateur est de rafraichir la page.Un click sur le bouton **Refresh** permet dans la plus part des cas de résoudre le dysfonctionnement. En cas d'echec de la procédure, il est nécessaire d'avertit le chef de salle.
+Si un comportement anormal de 4Me est détecté le premier réflexe de l'utilisateur est de rafraichir la page.Un click sur le bouton **Refresh** permet dans la plus part des cas de résoudre le dysfonctionnement. En cas d’échec de la procédure, il est nécessaire d'avertit le chef de salle.
 
 #####Bouton d'information de statut de service :
 Ce bouton cliquable indique l'état de fonctionnement de 4Me.
-Un click sur le bouton d'information de service permet de connaitre plus en detail le type de dysfonctionnement détécté.
+Un click sur le bouton d'information de service permet de connaitre plus en detail le type de dysfonctionnement détecté.
 
 ![Service Status Button](http://i.imgur.com/Zm9oMOWs.png) Fonctionnement est normal
 
@@ -67,12 +67,12 @@ Le premier niveau comme décrit dans pour les CWP et un deuxième niveau plus d�
 Ce niveau de détails permet une discussion plus facile avec le superviseur technique et améliore le niveau de comprehension de l'état du système par le chef de salle.
  - **SPVR TECH**: L'IHM du superviseur technique étant en cours de développement son fonctionnement sera décrit dans les prochaines versions du *manuel utilisateur 4Me*
 
-Les pannes possibles et surpervisées sont les suivantes : (TBC par Ben)
+Les pannes possibles et supervisées sont les suivantes : (TBC par Ben)
 - NA : Non Available
 - Monitored : Supervisé par 4Me
 |Service   |  4meCore | MAPPING  | XMAN  | ARCID  |
 |---|---|---|---|---|
-| Perte Connexion  | NA  | NA  | Monitored AMAN connexion | Monitore B2B NM connexion  |
+| Perte Connexion  | NA  | NA  | Monitored AMAN connexion | Monitored B2B NM connexion  |
 | Panne Serveur  | Monitored  |  Monitored | Monitored  | Monitored   |
 | Panne Acquisition ELVIRA  | NA  | NA  | Monitored  | NA   |
 |---|---|---|---|---|
@@ -92,7 +92,7 @@ Les notifications ne sont utilisées dans la première version que pour le servi
 
 Une pastille orange associée à un chiffre indique le nombre d'actions XMAN à réaliser.
 
-Ce nombre d'action XMAN à réaliser correspond au nombre d'avions à réduire qui sont à l'interieur du volume d'intérêt du secteur.
+Ce nombre d'action XMAN à réaliser correspond au nombre d'avions à réduire qui sont à l’intérieur du volume d'intérêt du secteur.
 
 ![Imgur](http://i.imgur.com/qc0O0KV.png)
 
@@ -108,7 +108,7 @@ L'objectif de 4Me est de pouvoir emmener seulement les informations adaptées su
 
 Ainsi, le mapping de la salle de contrôle est un principe fondamental pour l'utilisation de 4Me.
 
-Pour réaliser la cohérence secteur ouverts/client 4Me, le service MAPPING propose d'associer à chaque position un secteur, tout comme le fait XSALGOS ou bien ARTEMIS.
+Pour réaliser la cohérence secteur ouverts/client 4Me, le service MAPPING propose d'associer à chaque position un secteur, tout comme le fait X-SALGOS ou bien ARTEMIS.
 ![Imgur](http://i.imgur.com/BLndae9.png)
 
 
@@ -119,9 +119,9 @@ La salle de contrôle est représenté graphiquement sur le service MAPPING, seu
 Le positionnement graphique correspond à la vue des secteurs physiques lorsque le chef de salle regarde l'écran 4Me.
 
 Le regroupement/dégroupement d'un ou plusieurs secteurs se fait par la selection de la position choisie dans une logique d'addition.
-La logique d'addition repose sur le principe d'ajout de secteurs nominuax. 
-Pour créér un regroupement, on selectionnera donc la position recevante et on y ajoutera le ou les secteur que l'on souhaitera regrouper.
-Pour dégrouper un secteur, on selectionnera la position sur laquelle on souhaite ouvir un nouveau secteur et on y ajoutera le ou les secteurs que l'on souhaite dégrouper.
+La logique d'addition repose sur le principe d'ajout de secteurs nominaux. 
+Pour créer un regroupement, on sélectionnera donc la position recevante et on y ajoutera le ou les secteur que l'on souhaitera regrouper.
+Pour dégrouper un secteur, on sélectionnera la position sur laquelle on souhaite ouvrir un nouveau secteur et on y ajoutera le ou les secteurs que l'on souhaite dégrouper.
 
 Un click sur la position permet l'ouverture d'une boite d'action.
 
@@ -158,7 +158,7 @@ Dans l'*Information corner* la configuration choisie s'affiche dynamiquement ave
 
 L'algorithme de suggestion propose les solutions d'ouvertures ou de regroupement secteur les plus adaptées aux besoins opérationnels.
 
-Le principe repose sur une analyse instantannée de la configuration des secteurs ouverts et sur la position séléctionnée par le chef de salle pour effectuer le regroupement/dégroupement.
+Le principe repose sur une analyse instantanée de la configuration des secteurs ouverts et sur la position sélectionnée par le chef de salle pour effectuer le regroupement/dégroupement.
 
 L'algorithme proposera donc en priorité des regroupements/dégroupements URME dans la zone 2 et des regroupements/dégroupements URMN dans la zone 3
 ###Position indisponible
@@ -166,9 +166,9 @@ L'algorithme proposera donc en priorité des regroupements/dégroupements URME d
 
 Le Mapping 4Me permet de rendre indisponible un client 4Me.
 
-Dès lors qu'une CWP est déclarée comme indisponible, 4Me doit aussi être rendu indisponible afin d'assurer la cohérence de la configurationd e salle avec les autres systèmes.
+Dès lors qu'une CWP est déclarée comme indisponible, 4Me doit aussi être rendu indisponible afin d'assurer la cohérence de la configuration de salle avec les autres systèmes.
 Un click sur la position et un glissement du toggle **CWP Enabled** permet de rendre indisponible la position.
-De même pôur rendre disponible une position indisponible, un glissement de toggle **CWP Enabled** rendra la position à nouveau disponible.
+De même pour rendre disponible une position indisponible, un glissement de toggle **CWP Enabled** rendra la position à nouveau disponible.
 
 ![Imgur](http://i.imgur.com/GET6qkqm.png)
 
@@ -283,7 +283,7 @@ Le fond de l'étiquette change en fonction du statut de l'action.
 
 Le fond des etiquettes des vols est :
  - **Gris** si aucune action XMAN n'est demandée
- - **Gris** si l'action XMAN demandé a été réalisé par le controleur
+ - **Gris** si l'action XMAN demandé a été réalisé par le contrôleur
  ![Imgur](http://i.imgur.com/Z0MWy31l.png)
  - **Bleu** si une action XMAN est demandée
  - **Bleu** si une reduction XMAN différente de l'advisory a été donné par le contrôleur.
@@ -326,7 +326,7 @@ Ce filtrage est sélectionné par défaut sur les positions de contrôle **CWP**
 Le filtrage « vertical » se fait sur le volume intérêt du secteur ouvert. Grace à la fonction « mapping », chaque écran 4Me est associé à un secteur, chaque secteur est associé à son volume d’intérêt correspondant à « l’aire d’intérêt secteur » et aux limites verticales du dit secteur. En cas de regroupement le volume d’intérêt des blocs regroupés et la somme des volumes d’intérêt des secteurs regroupés.  
 
 Le filtrage sur le volume d’intérêt secteur permet l’affichage d’une liste d’avions XMAN épurée à son minimum et ne présentant que les avions qui entreront dans le secteur associé.
-###Fitrage All Flights
+###Filtrage All Flights
 ![Imgur](http://i.imgur.com/nw3tsUF.png)
 
 Le filtrage All Flight affiche tous les vols à destination de EGLL qui sont à l'intérieur de la *"Display Area"*
