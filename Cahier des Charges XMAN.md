@@ -89,14 +89,11 @@ Les contrôleurs du centre amont renseignent l’IHM des réductions de vitesse 
 ###Scenario 5 :
 Pour faciliter les analyses post-opératoires des dysfonctionnements, et répondre aux interrogations des contrôleurs sur le comportement des outils, il est plus efficace de rejouer une situation sur l’IHM que de procéder à l’analyse fastidieuse des fichiers.
 ##Synthèse des scénarios de travail
-|   |   |   |   |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
 |Id|Point faible|Origine (indiquer le ou les scénarios mettant en valeur le point)|Expression du besoin|
 |---|---|---|---|
 |1|Pas d’acquisition possible des données produites par l’AMAN et mises à disposition au niveau du webservice par l’intermédiaire des connections existantes (Msg OLDI AMA par ex)  |Scénario n°1|L'outil permet de d’acquérir et d’afficher les données d’information de gestion des arrivées au niveau du webservice mis en place à cet effet.|
 |2|Pas de proposition de vitesse produite par l’AMAN.|Scénario n°2|L'outil permet de proposer aux contrôleurs une conversion du délai à absorber en une proposition de réduction de point de Mach.|
-3
+I3
 Pas de possibilité dans le système ATM actuel de renseigner et partager les instructions de contrôle de vitesse transmises aux équipages.
 Scénario n°3
 L'outil permet aux contrôleurs de renseigner les instructions de réduction de point de Mach transmises aux équipages et de les partager entre les différentes IHM.
