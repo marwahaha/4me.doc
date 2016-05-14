@@ -41,10 +41,12 @@ Les CDS et ACDS utilisent l’IHM sur les postes « 4ME » déployés à l’�
 Le service technique utilise en salle de paramétrage, un client IHM spécifique permettant le monitoring des services d’acquisition de données et  la relance de l’applicatif. 
 Même si le niveau de criticité est faible, l’outil est utilisé de façon opérationnelle. A ce titre, il doit respecter les règles de développement en vigueur à la DSNA (METLOG).
 L'intégrité et la disponibilité des informations sont importantes dans le domaine ATC toutefois en ce qui concerne les services proposés par 4Me :
-•	La perte totale des informations n’a pas d’impact sécurité : l’indisponibilité du système est notifiée aux centres impactés, 
-•	La corruption détectable des informations n’a pas d’impact sécurité, l’information erronée étant annulée par les contrôleurs ou les équipages avant application. Cette situation conduit les opérateurs à déclarer le système comme indisponible et ramène au cas précédent.
-•	La corruption non détectable des informations a un impact limité sur la sécurité qui est lié à une éventuelle augmentation des coordinations avec les centres en aval qui auraient une vision différente de la situation.
+- La perte totale des informations n’a pas d’impact sécurité : l’indisponibilité du système est notifiée aux centres impactés, 
+- La corruption détectable des informations n’a pas d’impact sécurité, l’information erronée étant annulée par les contrôleurs ou les équipages avant application. Cette situation conduit les opérateurs à déclarer le système comme indisponible et ramène au cas précédent.
+- La corruption non détectable des informations a un impact limité sur la sécurité qui est lié à une éventuelle augmentation des coordinations avec les centres en aval qui auraient une vision différente de la situation.
+
 La plupart des utilisateurs opérationnels n'ont pas de connaissance informatique poussée et il n’est pas prévu d’outil de supervision pour la maintenance opérationnelle au service technique. Des informations de diagnostic simples sur l’état connu du service sont nécessaires pour que les acteurs opérationnels puissent effectuer les coordinations nécessaires avec les centres avals et la maintenance opérationnelle. Pour cette dernière, des fonctionnalités simples de relance à chaud depuis le client en salle de paramétrage sont à prévoir.
+
 ##Cycle de vie
 Pour ce qui concerne le déploiement et la mise en service opérationnelle au CRNA/Est, l'outil sera conçu, développé, installé, exploité et maintenu par le CRNA/Est.
 
@@ -56,35 +58,38 @@ L’architecture réseau pour la DSNA est la suivante : (Cf Note d’AT produit
 
 ##Schema descriptif des messages d’information de gestion des arrivees
 Chaque message d’information de gestion des arrivées à requérir auprès du webservice comprend notamment :
-•	L’information de séquence à la piste
-•	La stratégie d’utilisation des pistes
-•	Les informations de délai total ou partagé
-•	Les heures souhaitées de passage au COP, à l’IAF et au seuil de piste
+- L’information de séquence à la piste
+- La stratégie d’utilisation des pistes
+- Les informations de délai total ou partagé
+-  Les heures souhaitées de passage au COP, à l’IAF et au seuil de piste
 Le service est dépendant de l’AMAN du NATS qui produit le message pour ce service.
 Le schéma de complet de description de la charge utile est le suivant :
 
 ##Description de l’interface 
-•	Bandeau d’état de service :
-•	Bandeau latéral de service :
-•	Pavé d’applicatif:
+- Bandeau d’état de service :
+- Bandeau latéral de service :
+- Pavé d’applicatif:
+
 ##Scénario de travail
-Scenario 1
+###Scenario 1
+
 Sur les plages horaires 06h30 à 22h00 UTC (heure d’hiver) et 05h30 à 21h00 UTC (heure d’été), les procédures XMAN EGLL sont en vigueur.
 Grâce à la prise en compte des données ETFMS, l’AMAN EGLL commence à élaborer ses séquences 85 min (environ 550NM) avant la piste. Le délai calculé à la piste est alors partagé entre les différents acteurs : LATC (Terminal Center), LACC (Area Center) et un centre en route dont Reims UAC pour le flux d’arrivée via ABNUR.
 La table ci-après résume la stratégie de répartition du délai :
 
 La répartition du délai est appliquée au niveau du webservice de l’AMAN et le fichier obtenu après requête contient donc pour chaque vol le délai total et le délai Reims.
-Scenario 2 :
+###Scenario 2 :
 L’horizon d’activité pour XMAN EGLL a été fixé avec les partenaires à 350NM de la piste. A l’intérieur de cet horizon, les secteurs des centres amont appliquent les réductions de vitesse qui permettent d’absorber le délai qui leur est attribué.
 
 Une réduction de vitesse est proposée aux contrôleurs pour absorber le délai attribué à Reims UAC. Ellen’est pas fournie par le message d’information de gestion des arrivées et doit donc être le résultat d’un calcul local. Dans un premier temps, une approche simpliste pourra être utilisée selon les principes suivants :
 
-Scenario 3 :
+###Scenario 3 :
 Les contrôleurs du centre amont renseignent l’IHM des réductions de vitesse qu’ils ont implémentées de façon à ce que l’information soit partagée entre les différents acteurs opérationnels au niveau de ce centre. Dans un premier temps, cette information reste interne au centre amont et n’est pas partagée avec le centre aval.
-Scenario 4 : 
-Scenario 5 :
+###Scenario 4 : 
+###Scenario 5 :
 Pour faciliter les analyses post-opératoires des dysfonctionnements, et répondre aux interrogations des contrôleurs sur le comportement des outils, il est plus efficace de rejouer une situation sur l’IHM que de procéder à l’analyse fastidieuse des fichiers.
 ##Synthèse des scénarios de travail
+
 Id
 Point faible
 Origine (indiquer le ou les scénarios mettant en valeur le point)
@@ -126,24 +131,24 @@ Tableau 2 : synthèse des points forts et besoins correspondants
 
 #	Analyse Fonctionnelle
 ##Éléments du Milieu Extérieur (EME) :
-•	Contrôleurs Exécutif ou Planneur sur position de contrôle (CWP)
-•	Chef de Salle et ACDS
-•	Subdivision Études
-•	Service Technique
+- Contrôleurs Exécutif ou Planneur sur position de contrôle (CWP)
+- Chef de Salle et ACDS
+- Subdivision Études
+- Service Technique
 ##Fonctions principales :
-•	FP1 : Afficher une sélection des éléments présents dans les messages d’information de gestion des arrivées complétée d’éléments de données RADAR
-•	FP2 : Produire une proposition de réduction de point de Mach fonction du délai attribué au centre DSNA concerné.
-•	FP3 : Recueillir et partager entre toutes les IHM, les instructions de réduction de point de Mach transmises par les contrôleurs aux équipages.
-•	FP4 : Permettre à des clients-maître de piloter des fonctions particulières (ON/OFF, relance …)
-•	FP5 : Enregistrer et stocker les données relatives à la gestion des arrivées aux fins d’analyses post-opératoires et de rejeux.
-•	FP6 : Rejouer une situation antérieure
+-FP1 : Afficher une sélection des éléments présents dans les messages d’information de gestion des arrivées complétée d’éléments de données RADAR
+-FP2 : Produire une proposition de réduction de point de Mach fonction du délai attribué au centre DSNA concerné.
+-FP3 : Recueillir et partager entre toutes les IHM, les instructions de réduction de point de Mach transmises par les contrôleurs aux équipages.
+-FP4 : Permettre à des clients-maître de piloter des fonctions particulières (ON/OFF, relance …)
+-FP5 : Enregistrer et stocker les données relatives à la gestion des arrivées aux fins d’analyses post-opératoires et de rejeux.
+-FP6 : Rejouer une situation antérieure
 
 ##Fonctions contraintes :
-•	FC1 : Être tolérant à l’interruption de la production des messages d’information de gestion des arrivées par le webservice distant ou à l’interruption de réception de données RADAR.
-•	FC2 : L'outil devra pouvoir être adaptatif pour inclure ultérieurement des informations de gestion des arrivées pour d’autres aéroports.
-•	FC3 : Offrir une interface simple d’utilisation.
+-FC1 : Être tolérant à l’interruption de la production des messages d’information de gestion des arrivées par le webservice distant ou à l’interruption de réception de données RADAR.
+-FC2 : L'outil devra pouvoir être adaptatif pour inclure ultérieurement des informations de gestion des arrivées pour d’autres aéroports.
+-FC3 : Offrir une interface simple d’utilisation.
 
-4.4	Relations entre fonctions et 4ME
+##Relations entre fonctions et 4ME
 Les relations entre les différentes fonctions et les EME sont représentées sur la pieuvre ci-après :
 
 
@@ -156,7 +161,7 @@ Les relations entre les différentes fonctions et les EME sont représentées su
 
 
 
-4.5	Justification des fonctions et critères de valeur 
+##Justification des fonctions et critères de valeur 
 Fonction
 ID point faible
 Critère de valeur
@@ -193,69 +198,13 @@ Tableau 3 : Origine des fonctions et critères de valeur
 
 
 
-5	Besoins
-5.1	Modèle conceptuel des données du domaine
+#Besoins
+##Modèle conceptuel des données du domaine
 Le diagramme ci-après permet de se représenter les différentes entités mises en œuvre et les relations entre elles. Il ne présume en rien des classes réellement utilisées dans le code.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5.2	Cas d’utilisation (Use Cases)
+##Cas d’utilisation (Use Cases)
 La figure ci-dessous représente les cas d'utilisations que devra réaliser le futur outil :
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Cas d’utilisation
 Description
