@@ -7,7 +7,7 @@ Chacun des services est adapté à chacun des différents utilisateurs.
 ##SPVR OPS
 Le client **SPVR OPS** est le client du Chef de Salle situé à droite de l'écran ARTEMIS.
 ##SPVR Tech
-Le client de **SPVR Tech" est le client du superviseur technique, sa version est en cours de développement et son tulisiation sera détaillé dans une prochaine version du manuel utilisateur.
+Le client de **SPVR Tech" est le client du superviseur technique, sa version est en cours de développement et son utilisation sera détaillée dans une prochaine version du manuel utilisateur.
 
 ##FMP
 Le client **SPVR OPS** est le client de l'ACDS ou de l'Extended ATC Planner, ces fonctionnalités sont limités dans la première version de 4Me, mais un développement futur permettra de spécialiser l'IHM FMP, pour répondre aux besoins d'échange d'informations entre la FMP et les CWP.
@@ -37,11 +37,11 @@ Le coin supérieur gauche *"Information Corner"* contient les informations relat
 - Secteur ouvert (le cas échéant) 
 - Date et Heure
 
-Il est conseillé de verifier lors de chaque relève et de chaque dégroupent que l'information corner correspond au secteur de contrôle sur associé à la position.
+Il est conseillé de vérifier lors de chaque relève et de chaque dégroupent que l'information corner correspond au secteur de contrôle sur associé à la position.
 
 ####Status Corner
-Le coin supérieur droit *"Status Corner"* contient des boutons d'action du coeur : 
-#####Bouton refresh :
+Le coin supérieur droit *"Status Corner"* contient des boutons d'action de 4Me Core : 
+#####Bouton Refresh :
 En cas de comportement anormal de 4Me le bouton **Refresh** permet de rafraîchir la page en cours. 
 La page est rafraîchie automatiquement toutes le 5 secondes (TBC)
 Le réflexe utilisateur lorsqu'il rencontre un comportement non prévu de 4Me est le click sur le bouton **Refresh** avant tout report vers le chef de salle. La plupart des problèmes peuvent être résolus par un simple refresh.
@@ -58,11 +58,11 @@ L'état des  services 4 Me (4Me-Core, XMAN, ARCID, MAPPING) sont affichés par c
 Le bouton de dysfonctionnement s'affiche dès qu'un des services rencontre un dysfonctionnement. Un clic sur ce bouton permet de d'aller plus en details dans le type de dysfonctionnement rencontré.
 
  - **CWP :** Sur les positions de contrôle, le principe est d'éviter toute recherche de panne. Un seul niveau d'information est affiché pour connaitre le ou les services 4Me affectés par le dysfonctionnement.
-Dans le cas où un seul service serait affecté, les autres peuvent continuer à être utiliser.
+Dans le cas où un seul service serait affecté, les autres peuvent continuer à être utilisés.
  - **SPVR OPS**: Sur la position du Chef de salle : deux niveaux d'information sont disponibles .
 ![Service Status Information](http://i.imgur.com/x1Xd142.png)
 Le premier niveau comme décrit dans pour les CWP et un deuxième niveau plus détaillé des pannes possibles.
-Ce niveaux de détails permet une discussion plus facile avec le superviseur technique et améliore le niveau de comprehension de l'état du système par le chef de salle.
+Ce niveau de détails permet une discussion plus facile avec le superviseur technique et améliore le niveau de comprehension de l'état du système par le chef de salle.
  - **SPVR TECH**: L'IHM du superviseur technique étant en cours de développement son fonctionnement sera décrit dans les prochaines versions du *manuel utilisateur 4Me*
 
 Les pannes possibles et surpervisées sont les suivantes : (TBC par Ben)
@@ -78,7 +78,7 @@ Les pannes possibles et surpervisées sont les suivantes : (TBC par Ben)
 Exemple de dysfonctionnement XMAN :
 - ![Imgur](http://i.imgur.com/q4LfL0u.png)
 ###Bandeau Latéral
-La liste des services disponible sur le client 4Me (XMAN-ARCID-MAPPING) est affiché sur le bandeau latéral.  
+La liste des services disponible sur le client 4Me (XMAN-ARCID-MAPPING) est affichée sur le bandeau latéral.  
 ![Imgur](http://i.imgur.com/ImQ6nlh.png)
 
 Un click sur le service permet le basculement sur la page du service associé.
@@ -100,7 +100,7 @@ Lorsque toutes les actions XMAN ont été réalisées la notification disparait 
 Le service MAPPING permet de dégrouper ou regrouper les IHM 4Me.
 Dans l'optique de spécialiser les services et les affichages sur les écrans 4Me, il est indispensable d'assurer la cohérence de 4Me avec l'état réel de dégroupement des secteurs de contrôle.
 
-Dès lors que la correspondance secteur/position/client 4Me est assurée, les options de spécialisation de l'IHM deviennent possible.
+Dès lors que la correspondance secteur/position/client 4Me est assurée, les options de spécialisation de l'IHM deviennent possibles.
 
 L'objectif de 4Me est de pouvoir emmener seulement les informations adaptées sur le secteur de contrôle, et d'éviter l'affichage d'informations inutiles sur la position de contrôle.
 
@@ -174,7 +174,7 @@ Lorsque la position a été déclarée comme indisponible elle apparaît en gris
 ![Disabled CWP](http://i.imgur.com/lcWb7Hg.png)
 
 ###Affichage du nombre secteurs ouverts instantané
-La somme des secteurs ouverts est affiché dans la partie centrale de l'IHM MAPPING. 
+La somme des secteurs ouverts est affichée dans la partie centrale de l'IHM MAPPING. 
 
 Ce nombre équivaut à la somme instantanée des secteurs ouverts.
 ![TotalOpenedSectors](http://i.imgur.com/vzEy8wD.png)
@@ -191,7 +191,7 @@ Les clients CWP ne disposent d'aucun droit de modification de la configuration d
 Attention : *Cette information à jour ne doit pour autant pas être utilisé à des fins de coordinations.*
 
 #XMAN
-##Presentation générale
+##Présentation générale
 L’IHM **XMAN-4Me** se présente sur les clients **CWP** des secteurs de contrôle d’une liste de vols.
 
 ![XMAN](http://i.imgur.com/nbVJv6W.png)
@@ -243,7 +243,7 @@ S’il n’y a pas de délai Reims, l’ensemble de la ligne de boutons est en g
 
 Lorsqu’un délai Reims est alloué, l’IHM XMAN propose une réduction de vitesse et le bouton associé devient orange  (à faire). 
 Les autres boutons deviennent blancs et sont cliquables.
-Le fond de l'étiquette passe en surveillance bleu pour souligner l'etiquette sur lequel il est nécessaire d'agir.
+Le fond de l'étiquette passe en surveillance bleue pour souligner l'étiquette sur lequel il est nécessaire d'agir.
 ![Imgur](http://i.imgur.com/gR8lxYtl.png)
 
 Si le contrôleur applique la réduction de vitesse proposée, il renseigne l’IHM XMAN en cliquant sur le bouton et celui-ci devient vert (réalisé). Dans ce cas les autres boutons redeviennent gris.
@@ -269,8 +269,8 @@ La notification XMAN affiche le nombre d'action XMAN à réaliser par secteur.
 
 Un click sur la pastille permet le basculement sur la page XMAN
 ###Hightlight Pending Action
-Une fonction de sur-brillance des actions à faire permet de sur-visualiser les vols 
-La fonction « *Highlight Pending Action*» est toujours activée pour les vols pour lesquels il reste une information de reduction de vitesse à transmettre à l'equipage. Cette fonction met en surbrillance le fond de l’etiquette du vol ou action XMAN est demandé et n’est pas encore réalisée. 
+Une fonction de surbrillance des actions à faire permet de sur-visualiser les vols 
+La fonction « *Highlight Pending Action*» est toujours activée pour les vols pour lesquels il reste une information de réduction de vitesse à transmettre à l'équipage. Cette fonction met en surbrillance le fond de l’étiquette du vol ou action XMAN est demandé et n’est pas encore réalisée. 
 
 Le fond de l'étiquette change en fonction du statut de l'action.
 
@@ -355,9 +355,9 @@ Le bouton « XMAN Off » permet l’affichage sur toute les IHM d’un bandeau i
 ![Imgur](http://i.imgur.com/ReMyM2jm.png)
 Les advisories ne sont plus affichés sur les CWP.
 
-Un bandeau affiche la mention **« XMAN EGLL has been turned off by the supervisor »** s’affiche sur toutes les positions de controle.
+Un bandeau affiche la mention **« XMAN EGLL has been turned off by the supervisor »** s’affiche sur toutes les positions de contrôle.
 
-Les reductions de vitesse déjà effectuée restent sur l’IHM à des fin de propagation de l’information vers les secteurs suivants mais elle ne peuvent plus être modifiées.
+Les réductions de vitesse déjà effectuée restent sur l’IHM à des fin de propagation de l’information vers les secteurs suivants mais elle ne peuvent plus être modifiées.
 
 ![Imgur](http://i.imgur.com/YEBTrEd.png)
 ### MCS Minimum Clean Speed
