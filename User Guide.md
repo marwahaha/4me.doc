@@ -29,8 +29,11 @@ La partie 4Me Core est commune pour tous les utilisateurs.
 Le bandeau supérieur comporte deux parties :
 - Information Corner, à gauche
 - Status Corner, à droite
+
 ####Information Corner
+
 ![Imgur](http://i.imgur.com/KMYweSFm.png)
+
 Le coin supérieur gauche *"Information Corner"* contient les informations relative au statut du client 4Me(PXX) Sector: 
 - 4Me 
 - Numero de la position
@@ -41,18 +44,21 @@ Il est conseillé de vérifier lors de chaque relève et de chaque dégroupent q
 
 ####Status Corner
 Le coin supérieur droit *"Status Corner"* contient des boutons d'action de 4Me Core : 
+
 #####Bouton Refresh :
 En cas de comportement anormal de 4Me le bouton **Refresh** permet de rafraîchir la page en cours. 
+
 La page est rafraîchie automatiquement toutes le 5 secondes (TBC)
 Si un comportement anormal de 4Me est détecté le premier réflexe de l'utilisateur est de rafraichir la page.Un click sur le bouton **Refresh** permet dans la plus part des cas de résoudre le dysfonctionnement. En cas d’échec de la procédure, il est nécessaire d'avertit le chef de salle.
 
 #####Bouton d'information de statut de service :
+
 Ce bouton cliquable indique l'état de fonctionnement de 4Me.
 Un click sur le bouton d'information de service permet de connaitre plus en detail le type de dysfonctionnement détecté.
 
 ![Service Status Button](http://i.imgur.com/Zm9oMOWs.png) Fonctionnement est normal
 
-  ![Alarm Service Status](http://i.imgur.com/SWGfsrls.png) Dysfonctionnement est détecté.
+![Alarm Service Status](http://i.imgur.com/SWGfsrls.png) Dysfonctionnement est détecté.
 
 L'état des  services 4 Me (4Me-Core, XMAN, ARCID, MAPPING) sont affichés par ce bouton.
 
