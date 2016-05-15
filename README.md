@@ -1,6 +1,7 @@
 # 4Me-Documentation
-This rep store all the 4Me Documentation.
-XMAN Cahier des charges
+This repository stores all the 4Me Documentation.
+4Me XMAN Cahier des charges
+4Me Core Cahier des charges
 4Me User Guide
 Glossary
 Abreviation Lexicus
