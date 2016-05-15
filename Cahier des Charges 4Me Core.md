@@ -1,32 +1,38 @@
 #Introduction
-L’IHM 4Me répond à un besoin d’intégration de plusieurs services non connecté aux systèmes opérationnels sur la position de contrôle. L’application 4Me est   à la fois destinée à l’accueil d’applicatif existant comme XMAN et aux applicatifs futurs. 4Me devra être le support de nouveaux concepts opérationnels en expérimentation. Les IHM 4Me sont paramétrées par secteur et par regroupement de secteur, celles ci doivent donc correspondre au secteur réellement ouvert sur la position de contrôle.
+L’IHM 4Me répond à un besoin d’intégration de plusieurs services non connecté aux systèmes opérationnels sur la position de contrôle. L’application 4Me est à la fois destinée à l’accueil d’applicatif existant comme XMAN et aux applicatifs futurs comme ARCID. 
+
+4Me devra être le support de nouveaux concepts opérationnels en expérimentation. Les IHM 4Me sont paramétrées par secteur et par regroupement de secteur, celles ci doivent donc correspondre au secteur réellement ouvert sur la position de contrôle.
 Ce document a pour but d’identifier et d’exprimer les besoins pour la réalisation de l’IHM présentant aux différents acteurs opérationnels et techniques les informations nécessaires à l’intégration des différents services ATM Light.
 ##Documents applicables :
-[1] 
-[2] 
+[1] Cahier Des Charges XMAN 4Me
+[2] Cahier Des Charges XMAN ARCID
 [3] Note d’Architecture Technique
 [4] 
 ##Terminologie :
 Voir Annexes 2 et 3.
 ##Présentation du système
 ##Finalité, mission et objectifs du système
-- Finalité du système : Pour les applicatifs définis, la finalité du système est d’intégrer des applicatifs indépendants dans une seule IHM et de fournir à l’utilisateurs des données sur l’etat des services ainsi que des notifications d’action.
-- Missions : Pour chaque  service  concerné, le système permettra :
-o	d’informer les acteurs opérationnels de la nécessité d’une action,
-o	d’informer les acteurs opérationnels de l’état de service des applicatifs
--Objectifs du système évaluables : Présentation de 100% des données de chaque service
+###Finalité du système : 
+- Pour les applicatifs définis, la finalité du système est d’intégrer des applicatifs indépendants dans une seule IHM et de fournir à l’utilisateurs des données sur l’etat des services ainsi que des notifications d’action à réaliser.
+###Missions :
+Pour chaque  service  concerné, le système permettra :
+- permettre à l'utilisateur l'utilisation de chaque service.
+- d’informer les acteurs opérationnels de la nécessité d’une action.
+- d’informer les acteurs opérationnels de l’état de service des applicatifs.
+###Objectifs du système évaluables :
+Présentation de 100% des données de chaque service.
 
 ##Parties prenante
 ###DSNA/DTI
 	Définition des exigences et de l’architecture techniques coté DSNA
+###CRNA-Est
+-Gestion de Projet
 ###Service Technique
 ####Installation et maintenance de l'outil.
 ###Service Exploitation
-####Projet XMAN
-- Gestion de projet
+####Projet 4Me
 - Définition des besoins (Ateliers Développement Outils)
 - Analyse et Conception (Sub ETU)
-
 ####Subdivision ETU
 - Suivi de l’outil après MESO
 - Analyse post-opératoire sur la base des logs de l’outil.
@@ -38,7 +44,7 @@ Utilise l’IHM 4Me pour y intégrer les données ad hoc correspondant aux servi
 ####CWP
 Secteurs de contrôle mettent en œuvre les procédures relatives aux services intégrés dans 4Me. Ce sont les utilisateurs principaux de l’IHM.
 ##Environnement & Contexte opérationnel
-Les contrôleurs utilisent l’IHM directement sur les positions de contrôle où elle est déployée sur un écran « 4ME » à vocation multiservices qui est dédiées à des applications non connectées au système opérationnel.
+Les contrôleurs utilisent l’IHM directement sur les positions de contrôle où elle est déployée sur un écran « 4ME » à vocation multiservices qui est dédié à des applications non connectées au système opérationnel.
 
 Les CDS et ACDS utilisent l’IHM sur les postes « 4ME » déployés à l’îlot central. Les clients IHM déployés sur ces postes ont des besoins et fonctionnalités spécifiques. Ils peuvent être considérés comme des clients-maîtres.
 
@@ -52,10 +58,13 @@ L'intégrité et la disponibilité des informations sont importantes dans le dom
 - La corruption détectable des informations n’a pas d’impact sécurité, l’information erronée étant annulée par les contrôleurs ou les équipages avant application. Cette situation conduit les opérateurs à déclarer le système comme indisponible et ramène au cas précédent.
 - La corruption non détectable des informations a un impact limité sur la sécurité qui est lié à une éventuelle augmentation des coordinations avec les centres en aval qui auraient une vision différente de la situation.
 
-La plupart des utilisateurs opérationnels n'ont pas de connaissance informatique poussée et il n’est pas prévu d’outil de supervision pour la maintenance opérationnelle au service technique. Des informations de diagnostic simples sur l’état connu du service sont nécessaires pour que les acteurs opérationnels puissent effectuer les coordinations nécessaires avec les centres avals et la maintenance opérationnelle. Pour cette dernière, des fonctionnalités simples de relance à chaud depuis le client en salle de paramétrage sont à prévoir.
+La plupart des utilisateurs opérationnels n'ont pas de connaissance informatique poussée et il n’est pas prévu d’outil de supervision pour la maintenance opérationnelle au service technique. 
+
+Des informations de diagnostic simples sur l’état connu du service sont nécessaires pour que les acteurs opérationnels puissent effectuer les coordinations nécessaires avec les centres avals et la maintenance opérationnelle. Pour cette dernière, des fonctionnalités simples de relance à chaud depuis le client en salle de paramétrage sont à prévoir.
 
 ##Cycle de vie
 Pour ce qui concerne le déploiement et la mise en service opérationnelle au CRNA/Est, l'outil sera conçu, développé, installé, exploité et maintenu par le CRNA/Est.
+L'outil pourra etre mis à disposition des autres centres de la DSNA mais leur conception, developpement, installation, exploitation et maintenance seront réalisé par le centre en question.
 
 #Analyse de l’existant
 ##Presentation Générale du webservice (cas de EGLL)
@@ -80,21 +89,12 @@ Le schéma de complet de description de la charge utile est le suivant :
 ##Scénario de travail
 ###Scenario 1
 
-Sur les plages horaires 06h30 à 22h00 UTC (heure d’hiver) et 05h30 à 21h00 UTC (heure d’été), les procédures XMAN EGLL sont en vigueur.
-Grâce à la prise en compte des données ETFMS, l’AMAN EGLL commence à élaborer ses séquences 85 min (environ 550NM) avant la piste. Le délai calculé à la piste est alors partagé entre les différents acteurs : LATC (Terminal Center), LACC (Area Center) et un centre en route dont Reims UAC pour le flux d’arrivée via ABNUR.
-
-La table ci-après résume la stratégie de répartition du délai :
-
-La répartition du délai est appliquée au niveau du webservice de l’AMAN et le fichier obtenu après requête contient donc pour chaque vol le délai total et le délai Reims.
-
 ###Scenario 2 :
-L’horizon d’activité pour XMAN EGLL a été fixé avec les partenaires à 350NM de la piste. A l’intérieur de cet horizon, les secteurs des centres amont appliquent les réductions de vitesse qui permettent d’absorber le délai qui leur est attribué.
-
-Une réduction de vitesse est proposée aux contrôleurs pour absorber le délai attribué à Reims UAC. Ellen’est pas fournie par le message d’information de gestion des arrivées et doit donc être le résultat d’un calcul local. Dans un premier temps, une approche simpliste pourra être utilisée selon les principes suivants :
 
 ###Scenario 3 :
-Les contrôleurs du centre amont renseignent l’IHM des réductions de vitesse qu’ils ont implémentées de façon à ce que l’information soit partagée entre les différents acteurs opérationnels au niveau de ce centre. Dans un premier temps, cette information reste interne au centre amont et n’est pas partagée avec le centre aval.
+
 ###Scenario 4 : 
+
 ###Scenario 5 :
 Pour faciliter les analyses post-opératoires des dysfonctionnements, et répondre aux interrogations des contrôleurs sur le comportement des outils, il est plus efficace de rejouer une situation sur l’IHM que de procéder à l’analyse fastidieuse des fichiers.
 ##Synthèse des scénarios de travail
