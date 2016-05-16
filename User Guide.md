@@ -37,7 +37,6 @@ Le bandeau supérieur comporte deux parties :
 - Status Corner, à droite
 
 ####Information Corner
-
 ![Imgur](http://i.imgur.com/KMYweSFm.png)
 
 Le coin supérieur gauche *"Information Corner"* contient les informations relative au statut du client 4Me(PXX) Sector: 
@@ -73,6 +72,7 @@ Un clic sur ce bouton ouvre une fenêtre détaillant les différents états de s
 
  - **CWP :** Sur les positions de contrôle, le principe est d'éviter toute recherche de panne. Un seul niveau d'information est affiché pour connaitre le ou les services 4Me affectés par le dysfonctionnement.
 Dans le cas où un seul service serait affecté, les autres peuvent continuer à être utilisés.
+
 ![Imgur](http://i.imgur.com/ZVopWuum.png)
 
 
@@ -84,6 +84,7 @@ Le premier niveau comme décrit dans pour les CWP et un deuxième niveau plus d�
 Ce niveau de détails permet une discussion plus facile avec le superviseur technique et améliore le niveau de comprehension de l'état du système par le chef de salle.
 
 - **SPVR TECH**: L'IHM du superviseur technique étant en cours de développement son fonctionnement sera décrit dans les prochaines versions du *manuel utilisateur 4Me*
+
 ![Imgur](http://i.imgur.com/bLaO3Kam.png)
 
 Les pannes possibles et supervisées sont les suivantes : 
@@ -99,9 +100,12 @@ Les pannes possibles et supervisées sont les suivantes :
 
 
 Exemple de dysfonctionnement XMAN :
-- ![Imgur](http://i.imgur.com/q4LfL0um.png)
+
+![Imgur](http://i.imgur.com/q4LfL0um.png)
+
 ###Bandeau Latéral
 La liste des services disponible sur le client 4Me (XMAN-ARCID-MAPPING) est affichée sur le bandeau latéral.  
+
 ![Imgur](http://i.imgur.com/ImQ6nlhm.png)
 
 Un click sur le service permet le basculement sur la page du service associé.
@@ -130,6 +134,7 @@ L'objectif de 4Me est de pouvoir emmener seulement les informations adaptées su
 Ainsi, le mapping de la salle de contrôle est un principe fondamental pour l'utilisation de 4Me.
 
 Pour réaliser la cohérence secteur ouverts/client 4Me, le service MAPPING propose d'associer à chaque position un secteur, tout comme le fait X-SALGOS ou bien ARTEMIS.
+
 ![Imgur](http://i.imgur.com/BLndae9.png)
 
 
@@ -184,6 +189,7 @@ Le principe repose sur une analyse instantanée de la configuration des secteurs
 
 L'algorithme proposera donc en priorité des regroupements/dégroupements URME dans la zone 2 et des regroupements/dégroupements URMN dans la zone 3
 ###Position indisponible
+
 ![CWP Enabled](http://i.imgur.com/spoGPxb.png)
 
 Le Mapping 4Me permet de rendre indisponible un client 4Me.
@@ -201,12 +207,14 @@ Après le click sur le toggle, une confirmation de l'action par le bouton **Conf
 ![Imgur](http://i.imgur.com/H400P5z.png)
 
 Lorsque la position a été déclarée comme indisponible elle apparaît en gris.
+
 ![Disabled CWP](http://i.imgur.com/lcWb7Hgm.png)
 
 ###Affichage du nombre secteurs ouverts instantané
 La somme des secteurs ouverts est affichée dans la partie centrale de l'IHM MAPPING. 
 
 Ce nombre équivaut à la somme instantanée des secteurs ouverts.
+
 ![TotalOpenedSectors](http://i.imgur.com/vzEy8wD.png)
 
 ###RGR : affichage de la configuration ouverte sur les CWP
@@ -259,12 +267,11 @@ Il est important de rappeler ici que lorsque le vol entre dans les 350NM de la p
 Le codage couleur pour le délai total est le suivant
 
 - **Vert** : délai ≤ 7 
-
 ![Green](http://i.imgur.com/P6YBt8Zm.png)
 
 - **Jaune** : 5 ≤ délai ≤7 
-
 ![Imgur](http://i.imgur.com/tDPd3Trl.png)
+
 - **Rouge** : 7 ≤ délai
 ![Imgur](http://i.imgur.com/5k4fAJrl.png)
 
@@ -272,8 +279,8 @@ Le niveau de vol courant est désormais disponible grâce à l’introduction de
 ### Bloc des instructions de contrôle
 Les boutons cliquables du pavé numérique représentent des centièmes de Mach (x dans 0.0x). 
 S’il n’y a pas de délai Reims, l’ensemble de la ligne de boutons est en gris (neutre),
-![Imgur](http://i.imgur.com/UNGYR8Ym.png)
 
+![Imgur](http://i.imgur.com/UNGYR8Ym.png)
 
 Lorsqu’un délai Reims est alloué, l’IHM XMAN propose une réduction de vitesse et le bouton associé devient orange  (à faire). 
 Les autres boutons deviennent blancs et sont cliquables.
@@ -309,12 +316,15 @@ La fonction « *Highlight Pending Action*» est toujours activée pour les vols 
 Le fond de l'étiquette change en fonction du statut de l'action.
 
 Le fond des etiquettes des vols est :
- - **Gris** si aucune action XMAN n'est demandée
- - **Gris** si l'action XMAN demandé a été réalisé par le contrôleur
- ![Imgur](http://i.imgur.com/Z0MWy31l.png)
- - **Bleu** si une action XMAN est demandée
- - **Bleu** si une reduction XMAN différente de l'advisory a été donné par le contrôleur.
- ![Imgur](http://i.imgur.com/T1oI4ozl.png)
+- **Gris** si aucune action XMAN n'est demandée
+- **Gris** si l'action XMAN demandé a été réalisé par le contrôleur
+ 
+![Imgur](http://i.imgur.com/Z0MWy31l.png)
+ 
+- **Bleu** si une action XMAN est demandée
+- **Bleu** si une reduction XMAN différente de l'advisory a été donné par le contrôleur.
+
+![Imgur](http://i.imgur.com/T1oI4ozl.png)
  
 ### Filtrage
 En mode nominal le filtrage **CWP** par défaut est le suivant 
@@ -340,6 +350,7 @@ Le bandeau supérieur XMAN contient 3 boutons de filtrage :
 
 ![Imgur](http://i.imgur.com/CWBBVNR.png)
 #### Geo Filter : Filtrage Géographique 
+
 ![Imgur](http://i.imgur.com/hX1hgQz.png)
 
 Le filtrage « géographique » se fait sur l’aire intérêt secteur. En cas de regroupement l’aire d’intérêt des blocs regroupés et la somme des aires d’intérêt des secteurs regroupés.  
