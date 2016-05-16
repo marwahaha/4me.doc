@@ -1,9 +1,9 @@
 [TOC]
 #4Me 
-L'objectif de "4Me" est l'exploitation de diiférents services une IHM multiservices.
+L'objectif de "4Me" est l'exploitation de différents services dans une même IHM dite *multiservices*.
 Les informations sont traitées par l'IHM "4Me" de façon à distribuer les informations uniquement sur les secteurs qui en ont l'usage et au moment opportun.
 
-Chacun des services est adapté à chacun des différents utilisateurs.
+Chacun des services est adapté aux différents utilisateurs.
 4 types d'utilisateurs sont définis :
 
 ##SPVR OPS
@@ -33,6 +33,7 @@ La partie 4Me Core est commune pour tous les utilisateurs.
 
 
 Le bandeau supérieur comporte deux parties :
+
 - Information Corner, à gauche
 - Status Corner, à droite
 
@@ -40,21 +41,22 @@ Le bandeau supérieur comporte deux parties :
 ![Imgur](http://i.imgur.com/KMYweSFm.png)
 
 Le coin supérieur gauche *"Information Corner"* contient les informations relative au statut du client 4Me(PXX) Sector: 
+
 - 4Me 
 - Numero de la position
 - Secteur ouvert (le cas échéant) 
 - Date et Heure
 
-Il est conseillé de vérifier lors de chaque relève et de chaque dégroupent que l'information corner est cohérente avec le couple secteur/psotion.
+Afin de bénéficier de la spécialisation des services, il est recommandé de vérifier lors de chaque relève et de chaque dégroupement que l'**Information corner** est cohérente avec le couple secteur/position.
 
 ####Status Corner
-Le coin supérieur droit *"Status Corner"* contient des boutons d'action de 4Me Core : 
+Le coin supérieur droit *"Status Corner"* contient des boutons d'action de 4Me Core
 
 #####Bouton Refresh :
 En cas de comportement anormal de 4Me le bouton **Refresh** permet de rafraîchir la page en cours. 
 
-La page est rafraîchie automatiquement toutes le 5 secondes (TBC)
-Si un comportement anormal de 4Me est détecté le premier réflexe de l'utilisateur est de rafraichir la page.Un click sur le bouton **Refresh** permet dans la plus part des cas de résoudre le dysfonctionnement. En cas d’échec de la procédure, il est nécessaire d'avertit le chef de salle.
+La page est rafraîchie automatiquement toutes les 5 secondes (TBC)
+Si un comportement anormal de 4Me est détecté le premier réflexe de l'utilisateur est de rafraichir la page.Un click sur le bouton **Refresh** permet dans la plus part des cas de résoudre le dysfonctionnement. En cas d’échec de la procédure, il est nécessaire d'en avertir le chef de salle.
 
 #####Bouton d'information de statut de service :
 
@@ -72,6 +74,7 @@ Un clic sur ce bouton ouvre une fenêtre détaillant les différents états de s
 
  - **CWP :** Sur les positions de contrôle, le principe est d'éviter toute recherche de panne. Un seul niveau d'information est affiché pour connaitre le ou les services 4Me affectés par le dysfonctionnement.
 Dans le cas où un seul service serait affecté, les autres peuvent continuer à être utilisés.
+Si le Core connait un dysfonctionnement, 4Me n'est plus utilisable. Si un refresh ne solutionne pas le problème, il est nécessaire d'en avertir le chef de salle qui prendra les dispositions nécessaires.
 
 ![Imgur](http://i.imgur.com/ZVopWuum.png)
 
@@ -81,6 +84,7 @@ Dans le cas où un seul service serait affecté, les autres peuvent continuer à
 ![Imgur](http://i.imgur.com/bCTGgdbm.png)
 
 Le premier niveau comme décrit dans pour les CWP et un deuxième niveau plus détaillé des pannes possibles.
+
 Ce niveau de détails permet une discussion plus facile avec le superviseur technique et améliore le niveau de comprehension de l'état du système par le chef de salle.
 
 - **SPVR TECH**: L'IHM du superviseur technique étant en cours de développement son fonctionnement sera décrit dans les prochaines versions du *manuel utilisateur 4Me*
@@ -351,7 +355,7 @@ Le bandeau supérieur XMAN contient 3 boutons de filtrage :
 ![Imgur](http://i.imgur.com/CWBBVNR.png)
 #### Geo Filter : Filtrage Géographique 
 
-![Imgur](http://i.imgur.com/hX1hgQz.png)
+![Imgur](http://i.imgur.com/hX1hgQzm.png)
 
 Le filtrage « géographique » se fait sur l’aire intérêt secteur. En cas de regroupement l’aire d’intérêt des blocs regroupés et la somme des aires d’intérêt des secteurs regroupés.  
 
@@ -359,13 +363,13 @@ L’aire d’intérêt du secteur est l’aire dans lequel les avions seront aff
 
 Ce filtrage est sélectionné par défaut sur les positions de contrôle **CWP**.
 #### Geo+Vertical : Filtrage Vertical
-![Imgur](http://i.imgur.com/jITgU09.png)
+![Imgur](http://i.imgur.com/jITgU09m.png)
 
 Le filtrage « vertical » se fait sur le volume intérêt du secteur ouvert. Grace à la fonction « mapping », chaque écran 4Me est associé à un secteur, chaque secteur est associé à son volume d’intérêt correspondant à « l’aire d’intérêt secteur » et aux limites verticales du dit secteur. En cas de regroupement le volume d’intérêt des blocs regroupés et la somme des volumes d’intérêt des secteurs regroupés.  
 
 Le filtrage sur le volume d’intérêt secteur permet l’affichage d’une liste d’avions XMAN épurée à son minimum et ne présentant que les avions qui entreront dans le secteur associé.
 ###Filtrage All Flights
-![Imgur](http://i.imgur.com/nw3tsUF.png)
+![Imgur](http://i.imgur.com/nw3tsUFm.png)
 
 Le filtrage All Flight affiche tous les vols à destination de EGLL qui sont à l'intérieur de la *"Display Area"*
 Ce filtrage est sélectionné par défaut sur les positions chef de salle **SPVR OPS** et ACDS **FMP**.
@@ -375,18 +379,19 @@ Ce filtrage est sélectionné par défaut sur les positions chef de salle **SPVR
 
 Le passage de la souris sur l’aéroport de destination *« mouse over »* en colonne 1 de la liste XMAN filtre tous les avions à destination de cet aéroport. Cette fonction a une utilité limité dans le cadre actuel où seulement London Heathrow est soumis à restriction XMAN mais elle prépare l’avenir en particulier l’intégration de Zurich dans le projet XMAN pour le premier trimestre 2017.
 
-![Imgur](http://i.imgur.com/EODOBGV.png)
+![Imgur](http://i.imgur.com/EODOBGVs.png)
 #### Filtrage par COP : 
 ![Imgur](http://i.imgur.com/9yqERSn.png)
 
 Le passage de la souris sur le point de coordination COP « mouse over » en colonne 4 de la liste XMAN filtre tous les avions qui convergent vers ce COP. 
-![Imgur](http://i.imgur.com/M4CO9zF.png)
+
+![Imgur](http://i.imgur.com/M4CO9zFs.png)
 ###Filtrage par FL
 
 Le passage de la souris sur le FL *« mouse over »* en colonne 3 de la liste XMAN filtre tous les avions aux même FL. 
 ![Imgur](http://i.imgur.com/RZZIvyM.png)
 Le niveau sélectionné s'affiche en bleu et les vols non concernés sont grisés.
-![Imgur](http://i.imgur.com/JQjwYUC.png)
+![Imgur](http://i.imgur.com/JQjwYUCm.png)
 
 ## XMAN Fonctionnalités SPVR OPS
 L’IHM SPVR OPS est légèrement différente des IHM sur les positions de contrôle. 
@@ -417,7 +422,7 @@ Seul le chef de salle peut activer la procédure MCS sur l'IHM 4Me.
 L’IHM propose alors systématiquement **MCS** comme la vitesse à appliquer sur les clients **CWP**.
 Un click sur le bouton **MCS** permet de renseigner 4Me une fois que l’instruction est transmise aux équipages, ainsi les secteurs suivants auront connaissance de la vitesse de l'appareil.
 
-![Imgur](http://i.imgur.com/rTKocRwm.png)
+![Imgur](http://i.imgur.com/rTKocRw.png)
 
 La logique de couleur est la meme que pour XMAN
 
