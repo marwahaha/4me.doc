@@ -1,18 +1,23 @@
 [TOC]
 #4Me 
-4Me est une IHM intégratrice de plusieurs services. 
+L'objectif de "4Me" est l'exploitation de diiférents services une IHM multiservices.
+Les informations sont traitées par l'IHM "4Me" de façon à distribuer les informations uniquement sur les secteurs qui en ont l'usage et au moment opportun.
+
 Chacun des services est adapté à chacun des différents utilisateurs.
 4 types d'utilisateurs sont définis :
 
 ##SPVR OPS
 Le client **SPVR OPS** est le client du Chef de Salle situé à droite de l'écran ARTEMIS.
 ##SPVR Tech
-Le client de **SPVR Tech" est le client du superviseur technique, sa version est en cours de développement et son utilisation sera détaillée dans une prochaine version du manuel utilisateur.
+Le client de **SPVR Tech** est le client du superviseur technique, sa version est en cours de développement et son utilisation sera détaillée dans une prochaine version du manuel utilisateur.
 
 ##FMP
 Le client **SPVR OPS** est le client de l'ACDS ou de l'Extended ATC Planner, ces fonctionnalités sont limités dans la première version de 4Me, mais un développement futur permettra de spécialiser l'IHM FMP, pour répondre aux besoins d'échange d'informations entre la FMP et les CWP.
 ##CWP
-Les clients **CWP** sont les clients Positions de contrôle. Chacune de position de contrôle ouverte filtre les services et les données en fonction des besoins opérationnels.
+Les clients **CWP** sont les clients "positions de contrôle". 
+Ils sont dipsosés en haut de l'acran radar du controleur organique et sont pilotés par une souris dédié. Il n'y a pas de clavier physique sur les positions de controle pour le pilotage de 4Me.
+
+Chacune de position de contrôle ouverte filtre les services et les données en fonction des besoins opérationnels.
 
 Les droits des utilisateurs sont différents pour chaque service et seront décrits dans le manuel utilisateur ci dessous.
 
@@ -24,7 +29,8 @@ Les droits des utilisateurs sont différents pour chaque service et seront décr
 La partie 4Me Core est commune pour tous les utilisateurs.
 ##Fonctionnalités
 ###Bandeau Supérieur
-![Imgur](http://i.imgur.com/T0Up21y.png)
+![Imgur](http://i.imgur.com/cXiRM2u.png)
+
 
 Le bandeau supérieur comporte deux parties :
 - Information Corner, à gauche
@@ -40,7 +46,7 @@ Le coin supérieur gauche *"Information Corner"* contient les informations relat
 - Secteur ouvert (le cas échéant) 
 - Date et Heure
 
-Il est conseillé de vérifier lors de chaque relève et de chaque dégroupent que l'information corner correspond au secteur de contrôle sur associé à la position.
+Il est conseillé de vérifier lors de chaque relève et de chaque dégroupent que l'information corner est cohérente avec le couple secteur/psotion.
 
 ####Status Corner
 Le coin supérieur droit *"Status Corner"* contient des boutons d'action de 4Me Core : 
@@ -67,27 +73,36 @@ Un clic sur ce bouton ouvre une fenêtre détaillant les différents états de s
 
  - **CWP :** Sur les positions de contrôle, le principe est d'éviter toute recherche de panne. Un seul niveau d'information est affiché pour connaitre le ou les services 4Me affectés par le dysfonctionnement.
 Dans le cas où un seul service serait affecté, les autres peuvent continuer à être utilisés.
- - **SPVR OPS**: Sur la position du Chef de salle : deux niveaux d'information sont disponibles .
-![Service Status Information](http://i.imgur.com/x1Xd142.png)
+![Imgur](http://i.imgur.com/ZVopWuum.png)
+
+
+- **SPVR OPS**: Sur la position du Chef de salle deux niveaux d'information sont disponibles.
+
+![Imgur](http://i.imgur.com/bCTGgdbm.png)
+
 Le premier niveau comme décrit dans pour les CWP et un deuxième niveau plus détaillé des pannes possibles.
 Ce niveau de détails permet une discussion plus facile avec le superviseur technique et améliore le niveau de comprehension de l'état du système par le chef de salle.
- - **SPVR TECH**: L'IHM du superviseur technique étant en cours de développement son fonctionnement sera décrit dans les prochaines versions du *manuel utilisateur 4Me*
 
-Les pannes possibles et supervisées sont les suivantes : (TBC par Ben)
+- **SPVR TECH**: L'IHM du superviseur technique étant en cours de développement son fonctionnement sera décrit dans les prochaines versions du *manuel utilisateur 4Me*
+![Imgur](http://i.imgur.com/bLaO3Kam.png)
+
+Les pannes possibles et supervisées sont les suivantes : 
+
 - NA : Non Available
 - Monitored : Supervisé par 4Me
+
 |Service   |  4meCore | MAPPING  | XMAN  | ARCID  |
 |---|---|---|---|---|
 | Perte Connexion  | NA  | NA  | Monitored AMAN connexion | Monitored B2B NM connexion  |
 | Panne Serveur  | Monitored  |  Monitored | Monitored  | Monitored   |
 | Panne Acquisition ELVIRA  | NA  | NA  | Monitored  | NA   |
-|---|---|---|---|---|
+
 
 Exemple de dysfonctionnement XMAN :
-- ![Imgur](http://i.imgur.com/q4LfL0u.png)
+- ![Imgur](http://i.imgur.com/q4LfL0um.png)
 ###Bandeau Latéral
 La liste des services disponible sur le client 4Me (XMAN-ARCID-MAPPING) est affichée sur le bandeau latéral.  
-![Imgur](http://i.imgur.com/ImQ6nlh.png)
+![Imgur](http://i.imgur.com/ImQ6nlhm.png)
 
 Un click sur le service permet le basculement sur la page du service associé.
 
@@ -100,7 +115,7 @@ Une pastille orange associée à un chiffre indique le nombre d'actions XMAN à 
 
 Ce nombre d'action XMAN à réaliser correspond au nombre d'avions à réduire qui sont à l’intérieur du volume d'intérêt du secteur.
 
-![Imgur](http://i.imgur.com/qc0O0KV.png)
+![Imgur](http://i.imgur.com/qc0O0KVm.png)
 
 Lorsque toutes les actions XMAN ont été réalisées, la notification disparait du bandeau latéral.
 # MAPPING
@@ -159,6 +174,7 @@ Le bouton **Confirm** permet de confirmer la configuration choisie.
 Seul le client **SPVR OPS**  du chef de salle peut modifier la configuration de la salle de contrôle.
 
 Dans l'*Information corner* la configuration choisie s'affiche dynamiquement avec le signe **P31=>KHYR** qui signifie qu'après validation la Position 31 sera associé au secteur KHYR.
+
 ![Imgur](http://i.imgur.com/YaNZL00.png)
 ####Algorithme de suggestion de regroupement/dégroupement
 
@@ -181,10 +197,11 @@ De même pour rendre disponible une position indisponible, un glissement de togg
 ![Imgur](http://i.imgur.com/uWwnizbm.png)
 
 Après le click sur le toggle, une confirmation de l'action par le bouton **Confirm** est nécessaire.
+
 ![Imgur](http://i.imgur.com/H400P5z.png)
 
 Lorsque la position a été déclarée comme indisponible elle apparaît en gris.
-![Disabled CWP](http://i.imgur.com/lcWb7Hg.png)
+![Disabled CWP](http://i.imgur.com/lcWb7Hgm.png)
 
 ###Affichage du nombre secteurs ouverts instantané
 La somme des secteurs ouverts est affichée dans la partie centrale de l'IHM MAPPING. 
@@ -230,19 +247,23 @@ En dehors de plages d’activité XMAN même si le délais total est supérieur 
 
 Il s’agit des 5 premières colonnes de l’IHM XMAN :
 
- - **ARCID - ADES** : Indicatif de l'avion en L1 et Aéroport de destination en L2
- - **Delay** : Total Delay, délai total du vol calculé par l'AMAN
- - **FL** : Actual Flight Level (Mode C) fourni par le serveur ELVIRA
- - **COP / TTO** : Point de Coordination Reims (COP) / Heure calculée comme objectif au COP par l’AMAN (TTO)
+- **ARCID - ADES** : Indicatif de l'avion en L1 et Aéroport de destination en L2
+- **Delay** : Total Delay, délai total du vol calculé par l'AMAN
+- **FL** : Actual Flight Level (Mode C) fourni par le serveur ELVIRA
+- **COP / TTO** : Point de Coordination Reims (COP) / Heure calculée comme objectif au COP par l’AMAN (TTO)
 
-![Imgur](http://i.imgur.com/fJiD1ur.png)
+![Imgur](http://i.imgur.com/fJiD1urm.png)
 
 Il est important de rappeler ici que lorsque le vol entre dans les 350NM de la piste, les valeurs TTO@ABNUR et Reims Delay continuent d’évoluer en fonction des données de l’AMAN de Londres. Elles sont totalement dynamiques.
 
 Le codage couleur pour le délai total est le suivant
-- **Vert** : délai ≤ 7
-![Green](http://i.imgur.com/P6YBt8Z.png)
-- **Jaune** : 5 ≤ délai ≤7
+
+- **Vert** : délai ≤ 7 
+
+![Green](http://i.imgur.com/P6YBt8Zm.png)
+
+- **Jaune** : 5 ≤ délai ≤7 
+
 ![Imgur](http://i.imgur.com/tDPd3Trl.png)
 - **Rouge** : 7 ≤ délai
 ![Imgur](http://i.imgur.com/5k4fAJrl.png)
@@ -251,13 +272,13 @@ Le niveau de vol courant est désormais disponible grâce à l’introduction de
 ### Bloc des instructions de contrôle
 Les boutons cliquables du pavé numérique représentent des centièmes de Mach (x dans 0.0x). 
 S’il n’y a pas de délai Reims, l’ensemble de la ligne de boutons est en gris (neutre),
-![Imgur](http://i.imgur.com/UNGYR8Y.png)
+![Imgur](http://i.imgur.com/UNGYR8Ym.png)
 
 
 Lorsqu’un délai Reims est alloué, l’IHM XMAN propose une réduction de vitesse et le bouton associé devient orange  (à faire). 
 Les autres boutons deviennent blancs et sont cliquables.
 Le fond de l'étiquette passe en surveillance bleue pour souligner l'étiquette sur lequel il est nécessaire d'agir.
-![Imgur](http://i.imgur.com/gR8lxYtl.png)
+![Imgur](http://i.imgur.com/gR8lxYtls.png)
 
 Si le contrôleur applique la réduction de vitesse proposée, il renseigne l’IHM XMAN en cliquant sur le bouton et celui-ci devient vert (réalisé). Dans ce cas les autres boutons redeviennent gris.
 ![Imgur](http://i.imgur.com/Z0MWy31l.png)
@@ -278,7 +299,7 @@ En cas d’erreur de saisie, le bouton UNDO permet de remettre les boutons à l�
 ###Notifications
 La notification XMAN affiche le nombre d'action XMAN à réaliser par secteur.
 
-![Imgur](http://i.imgur.com/qc0O0KV.png)
+![Imgur](http://i.imgur.com/qc0O0KVm.png)
 
 Un click sur la pastille permet le basculement sur la page XMAN
 ###Hightlight Pending Action
@@ -303,12 +324,12 @@ Le filtrage **CDS** est le suivant :
  - Filtrage vertical : toutes couches
  - Filtrage géographique : visualisation totale
 
-  |Filtrage|  CWP | FMP  | SPVR OPS | SPVR TECH  |
+ 
+|Filtrage|  CWP | FMP  | SPVR OPS | SPVR TECH  |
 |---|---|---|---|---|
 | Nominal  | Geo Filter  | All Flights | All Flights| All Flights |
 | Optionel  | Geo + Vertical 
 | | All Flights |  None | None  | None   |
-|---|---|---|---|---|
 
 ### Options de filtrage :
 Le bandeau supérieur XMAN contient 3 boutons de filtrage :
@@ -388,6 +409,7 @@ Un click sur le bouton **MCS** permet de renseigner 4Me une fois que l’instruc
 ![Imgur](http://i.imgur.com/rTKocRwm.png)
 
 La logique de couleur est la meme que pour XMAN
+
 - Orange : **Action à faire**
 - Vert : **Action réalisée**
 
@@ -397,5 +419,55 @@ Lorsque la procédure **MCS** est activée, plus aucun advisory XMAN n'est pouss
 
 #ARCID
 ##Présentation Générale
-Le service ARCID permet l'accès au profil 4D ETFMS, c'est à dire au plan de vol tel qu'accepté par l'ETFMS.
+Le service ARCID permet l'accès au profil 4D ETFMS, c'est à dire au plan de vol accepté par l'ETFMS.
+Un click sur le service ARCID permet d'ouvrir la page ARCID.
+Un premier volet de recherche permet l'accès au profil 4D ETFMS du vol.
 ##Fonctionnalités
+###Champ recherche
+![Imgur](http://i.imgur.com/We2Kcwcm.png)
+
+4Me ne dispose pas de clavier physique sur la position.
+Pour acceder au champ recherche un click sur *loupe* ou dans le champ *Search Callsign* ouvre la clavier virtuel suivant.
+
+
+![Imgur](http://i.imgur.com/qdkNbkt.png)
+
+###Auto Completion
+![Imgur](http://i.imgur.com/WIEuyDbm.png)
+Afin de faciliter la saisie du callsign un algorithme d'autocomplétion a été développé.
+Toutes les 30 secondes, 4Me ARCID fait une requète auprès de NM en chargeant tout la liste des avions dans le *traffic volume* **RMS**.
+4Me ARCID connait donc tous les vols à l'interieur du traffic volume RMS, dès la saisie du premier caractère ARCID affiche la liste des vols comportant ce caractère. Un click de seclection sur le vol recherché permet d'ouvrir le profil 4D ETFMS.
+
+Néamoins il se peut que le vol rechercher soit absent du traffic volume RMS, dans ce cas une saisie des 8 caractères maximum standard OACI, sera nécessaire pour accéder au plan de vol.
+###Result
+Dans le cas où plusieurs plans de vol correspondant au même ARCID existent dans l'ETFMS, ces différents plans s'affichent dans l'onglet **Results**.
+Les indications ADES-ADEP permettent le choix du profil ETFMS recherché.
+###History
+L'onglet **History** garde en mémoire les dernièrers recherches efféctuées à l'echelle de toutes les positions 4Me de Reims. 
+Dès lors une fois qu'un callsign a été saisi une fois sur un client 4Me, un click de selection suffit pour accéder au plan de vol de l'avion en question.
+
+###Point profile Presentation
+Le profil 4D ETFMS est affiché sur forme de table :
+
+|Estimate| Point| FL |Trend|
+|---|---|---|---|
+|Heure estimée sur le waypoint selon le profil CTFM| BALISE|Niveau prévu à la balise|Tendance evolutive|
+
+Un pavé d'information générale rassemble les données spécifiques du vol :
+
+- ARCID : Identificatif de l'avion
+- ADEP -> ADES
+- EOBT DATE and HOUR
+- Delay : Total NM Delay 
+- Last Updated : dernière pise à jour du plan de vol.
+
+![Imgur](http://i.imgur.com/DjMl4Rom.png)
+Description des champs
+
+|Estimate| Point| FL |Trend|
+|---|---|---|---|
+|Heure estimée sur le waypoint selon le profil CTFM| BALISE|Niveau prévu à la balise|Tendance evolutive|
+![Imgur](http://i.imgur.com/mpaUztT.png)
+Force Refresh
+Pour rafraichir le plan de vol un click sur le bouton ci dessous, force une nouvelle requète du plan de vol chez le Network Manager.
+![Imgur](http://i.imgur.com/aefwkHxm.png)
