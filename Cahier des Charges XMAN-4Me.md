@@ -1,58 +1,32 @@
+[TOC]
 #Introduction
-L’IHM 4Me répond à un besoin d’intégration de plusieurs services non connecté aux systèmes opérationnels sur la position de contrôle. L’application 4Me est   à la fois destinée à l’accueil d’applicatif existant comme XMAN et aux applicatifs futurs. 4Me devra être le support de nouveaux concepts opérationnels en expérimentation. Les IHM 4Me sont paramétrées par secteur et par regroupement de secteur, celles ci doivent donc correspondre au secteur réellement ouvert sur la position de contrôle.
-Ce document a pour but d’identifier et d’exprimer les besoins pour la réalisation de l’IHM présentant aux différents acteurs opérationnels et techniques les informations nécessaires à l’intégration des différents services ATM Light.
+Le concept de Cross Border Arrival Management (XMAN) implique la mise à disposition de messages de séquence d'arrivée via des services Web SWIM (SWIM-WS) aux centres situés en amont de l’horizon AMAN habituel. L'idée est que les contrôleurs des centres en amont vont ralentir les aéronefs en route afin de réduire le délai à résorber dans les basses couches et les attentes éventuelles. Cette application tactique de contrôle de vitesse sur un flux de vols à l’arrivée met en œuvre le principe de l’attente en ligne et va conduire à des économies de carburant pour nos clients opérateurs aériens.Ce document a pour but d’identifier et d’exprimer les besoins pour la réalisation de l’IHM présentant aux différents acteurs opérationnels et techniques les informations nécessaires à la mise en œuvre des procédures XMAN sur la base des données reçues des AMAN des aéroports
 ##Documents applicables :
-[1] 
-[2] 
-[3] Note d’Architecture Technique
-[4] 
+- [1] CONOPS FABEC Basic Step- [2] Consigne Exploitation N°2015/00022- [3] Note d’Architecture Technique- [4] Schéma descriptif des messages d’information de gestion des arrivées
+
 ##Terminologie :
 Voir Annexes 2 et 3.
 ##Présentation du système
 ##Finalité, mission et objectifs du système
-- Finalité du système : Pour les applicatifs définis, la finalité du système est d’intégrer des applicatifs indépendants dans une seule IHM et de fournir à l’utilisateurs des données sur l’etat des services ainsi que des notifications d’action.
-- Missions : Pour chaque  service  concerné, le système permettra :
-o	d’informer les acteurs opérationnels de la nécessité d’une action,
-o	d’informer les acteurs opérationnels de l’état de service des applicatifs
--Objectifs du système évaluables : Présentation de 100% des données de chaque service
+- **Finalité du système :** 
+Pour les vols à destination d’un aéroport pour lequel des procédures XMAN sont définies, la finalité du système est de présenter aux acteurs opérationnels des indications de délai à absorber ou d’heure objectif à atteindre sur un point donné. Ces indications sont complétées d’une proposition de vitesse ou de variation de vitesse permettant d’atteindre ces objectifs.- **Missions :** 
+Pour chaque vol concerné, le système permettra :
+ -	d’informer les acteurs opérationnels du délai total à la piste, du délai à résorber dans la portion d’espace aérien considérée par les procédures XMAN, ainsi que de l’heure objectif à atteindre à un point donné. - de proposer une vitesse ou réduction de vitesse à appliquer pour atteindre les objectifs - de partager entre les différents acteurs les instructions de contrôle qui auront été transmises aux aéronefs dans le cadre des procédures XMAN.- **Objectifs du système évaluables :** Présentation de 100% des vols contenus dans la séquence reçue d’un AMAN
 
 ##Parties prenante
-###DSNA/DTI
-	Définition des exigences et de l’architecture techniques coté DSNA
-###Service Technique
-####Installation et maintenance de l'outil.
-###Service Exploitation
-####Projet XMAN
-- Gestion de projet
-- Définition des besoins (Ateliers Développement Outils)
-- Analyse et Conception (Sub ETU)
-
-####Subdivision ETU
-- Suivi de l’outil après MESO
-- Analyse post-opératoire sur la base des logs de l’outil.
-
-####Chef de Salle 
-Utiliser l’IHM 4Me SPVR pour mapper correctement les IHM Secteur 4Me en salle de contrôle et assurer ainsi la correspondance entre les secteurs ouverts sur la position de contrôle et l’IHM 4Me Secteur.
-####ACDS
-Utilise l’IHM 4Me pour y intégrer les données ad hoc correspondant aux services dont il a la responsabilité.
-####CWP
-Secteurs de contrôle mettent en œuvre les procédures relatives aux services intégrés dans 4Me. Ce sont les utilisateurs principaux de l’IHM.
+###Projet FABEC XMAN- Définition du concept opérationnel
+- Définition des exigences et de l’architecture techniques de haut niveau
+###Projet d’implémentation (pour un aéroport donné)- Définition de la stratégie de répartition du délai- Définition des méthodes opérationnelles- Définition des données à échanger### DSNA/DTI- Définition des exigences et de l’architecture techniques coté DSNA
+###Service Technique- Installation et maintenance de l'outil.
+###Service Exploitation- Projet XMAN -Gestion de projet -Définition des besoins (Ateliers XMAN) -Analyse et Conception (Sub ETU)
+- Subdivision ETU -Suivi de l’outil après MESO
+ -Analyse post-opératoire sur la base des logs de l’outil.
+ ###Chef de Salle
+coordonne avec les superviseurs des centres hôtes des AMAN :- la mise en œuvre des procédures XMAN en fonction des éléments en sa possession sur la situation météo, technique ou ATFCM.- L’utilisation de procédures dérogatoires par rapport aux éléments transmis par les AMAN (Utilisation de Minimum Clean Speed par exemple)###ACDS
+Prend en compte la charge de travail XMAN dans ses analyses ATFCM.- Secteurs de contrôle mettent en œuvre les procédures XMAN, délivrent les instructions de contrôle aux aéronefs concernés et renseignent l’IHM. Ce sont les utilisateurs principaux de l’IHM.
 ##Environnement & Contexte opérationnel
-Les contrôleurs utilisent l’IHM directement sur les positions de contrôle où elle est déployée sur un écran « 4ME » à vocation multiservices qui est dédiées à des applications non connectées au système opérationnel.
-
-Les CDS et ACDS utilisent l’IHM sur les postes « 4ME » déployés à l’îlot central. Les clients IHM déployés sur ces postes ont des besoins et fonctionnalités spécifiques. Ils peuvent être considérés comme des clients-maîtres.
-
-Le service technique utilise en salle de paramétrage, un client IHM spécifique permettant le monitoring des services d’acquisition de données et  la relance de l’applicatif. 
-
-Même si le niveau de criticité est faible, l’outil est utilisé de façon opérationnelle. A ce titre, il doit respecter les règles de 
-développement en vigueur à la DSNA (METLOG).
-
-L'intégrité et la disponibilité des informations sont importantes dans le domaine ATC toutefois en ce qui concerne les services proposés par 4Me :
-- La perte totale des informations n’a pas d’impact sécurité : l’indisponibilité du système est notifiée aux centres impactés, 
-- La corruption détectable des informations n’a pas d’impact sécurité, l’information erronée étant annulée par les contrôleurs ou les équipages avant application. Cette situation conduit les opérateurs à déclarer le système comme indisponible et ramène au cas précédent.
-- La corruption non détectable des informations a un impact limité sur la sécurité qui est lié à une éventuelle augmentation des coordinations avec les centres en aval qui auraient une vision différente de la situation.
-
-La plupart des utilisateurs opérationnels n'ont pas de connaissance informatique poussée et il n’est pas prévu d’outil de supervision pour la maintenance opérationnelle au service technique. Des informations de diagnostic simples sur l’état connu du service sont nécessaires pour que les acteurs opérationnels puissent effectuer les coordinations nécessaires avec les centres avals et la maintenance opérationnelle. Pour cette dernière, des fonctionnalités simples de relance à chaud depuis le client en salle de paramétrage sont à prévoir.
+Les contrôleurs utilisent l’IHM directement sur les positions de contrôle où elle est déployée sur un écran « 4ME » à vocation multiservices qui est dédiées à des applications non connectées au système opérationnel.Les CDS et ACDS utilisent l’IHM sur les postes « 4ME » déployés à l’îlot central. Les clients IHM déployés sur ces postes ont des besoins et fonctionnalités spécifiques. Ils peuvent être considérés comme des clients-maîtres.Le service technique utilise,en salle de paramétrage, un client IHM spécifique permettant le monitoring des services d’acquisition de données et  la relance de l’applicatif. Même si le niveau de criticité est faible, l’outil est utilisé de façon opérationnelle. A ce titre, il doit respecter les règles de développement en vigueur à la DSNA (METLOG).L'intégrité et la disponibilité des informations sont importantes dans le domaine ATC toutefois en ce qui concerne les procédures XMAN :- La perte totale des informations n’a pas d’impact sécurité : l’indisponibilité du système est notifiée aux centres avals, aucun délai n’est absorbé dans les espaces objet des procédures XMAN et est intégralement transféré dans la zone de couverture antérieure des AMAN.
+- La corruption détectable des informations (mauvais indicatif, délai incohérent, proposition de vitesse incohérente) n’a pas d’impact sécurité, l’information erronée étant annulée par les contrôleurs ou les équipages avant application. Cette situation conduit les opérateurs à déclarer le système comme indisponible et ramène au cas précédent.- La corruption non détectable des informations (délai faux ou proposition de vitesse fausse mais dans l’amplitude des valeurs possibles) a un impact limité sur la sécurité qui est lié à une éventuelle augmentation des coordinations avec les centres en aval qui auraient une vision différente de la situation. La nature des procédures XMAN de type « Best Effort » est en elle-même une mitigation de ce risque : les centres avals ne s’attendant pas à une application permanente et pour chaque vol des procédures, il est très peu probable qu’une éventuelle présentation du trafic de façon non conforme avec la vision AMAN fasse l’objet d’une coordination.La plupart des utilisateurs opérationnels n'ont pas de connaissance informatique poussée et il n’est pas prévu d’outil de supervision pour la maintenance opérationnelle au service technique. Des informations de diagnostic simples sur l’état connu du service sont nécessaires pour que les acteurs opérationnels puissent effectuer les coordinations nécessaires avec les centres avals et la maintenance opérationnelle. Pour cette dernière, des fonctionnalités simples de relance à chaud depuis le client en salle de paramétrage sont à prévoir.
 
 ##Cycle de vie
 Pour ce qui concerne le déploiement et la mise en service opérationnelle au CRNA/Est, l'outil sera conçu, développé, installé, exploité et maintenu par le CRNA/Est.
@@ -73,10 +47,13 @@ Le service est dépendant de l’AMAN du NATS qui produit le message pour ce ser
 Le schéma de complet de description de la charge utile est le suivant :
 
 ##Description de l’interface 
-- Bandeau d’état de service :
-- Bandeau latéral de service :
-- Pavé d’applicatif:
-
+- Type de sécurisation de la connexion utilisé : Une authentification HTTP basique est utilisée pour l’accès au service de séquence d'arrivée et le protocole de transfert est HTTP sur SSL (HTTPS). Des comptes utilisateur doivent être fournis pour chaque client, avec une séparation entre les comptes pour l'utilisation des différents endpoints.- Certificat SSL :Le Service de séquence d'arrivée utilise un certificat Comodo signé, valable jusqu'en Mars 2016. Pour éviter les erreurs lors de l'authentification en raison de l'absence deDNS sur le réseau opérationnel, le client doit ajouter le domaine et l'adresse IP dans le fichier hôte.- Différents Endpoints : Il y a deux types de endpoint. 
+ - Un endpoint non filtré qui sert la dernière séquence avec tous les vols à destination de EGLL.
+ - Des endpoints filtrés en fonction des COP (Coordination Point)  entre LACC et les centres en amont qui sert le dernier message contenant les vols qui passent par le COP spécifié.- Requête RESTFul
+ - HTTP Method: GET 
+ - Protocol: HTTP over SSL, HTTPS 
+ - Target URL: https://xx.xxx.xx.xxx
+ - ArrivalSequenceExtCurrent/webproxy/arrivalsequence
 ##Scénario de travail
 ###Scenario 1
 
@@ -218,4 +195,76 @@ B5.1|Le développement du système respecte la METLOG|Environnement et contexte 
 B5.2|En cas d’interruption prolongée de la réception des messages d’information de gestion des arrivées, l’outil doit indiquer le non rafraichissement des données sans pour autant provoquer l’arrêt de l’applicatif.L’applicatif doit être tolérant à l’absence de données RADAR.|FC1|1|
 |B5.3|L’IHM doit proposer aux contrôleurs une vision claire des vols soumis aux procédures XMAN. Elle permet notamment de renseigner les instructions transmises en un seul clic. Par ailleurs, l’IHM sur les secteurs de contrôle ne doit  faire appel à aucune saisie clavier.|FC3 et Annexe 1|1|
 
+#Récupération des données de l'AMAN
+##Connexion AMAN
+La connexion avec l'AMAN du terrain désigné pour rendre le service XMAN est un préalable à la mise en service. La séquence telle que calculé par l'AMAN doit etre partagée avec le module XMAN.
+L'AMAN de Londres Heatrow LHR fournit via un web service un ficher XML qui contient la séquence d'arrivée.
+Une connexion à ce webservice est nécessaire.
 
+
+##Filtrage du fichier XML
+La séquence d'arrivée contient tous les avions à destination de LHR à l'intérieur de l'aire dite "Eligilibility Horizon" soit tous les avions à l'interieur d'un cercle de 550Nm de rayon centrée sur LHR.
+
+##Creation d'une base de données des vols XMAN
+##Données nécessaires à l'IHM 4Me
+XMAN 4Me créé une liste de vol et l'affiche sur les positions de contrôle (**CWP**).
+Cette liste de vol contient
+
+- ARCID
+- Delay Total
+- FL 
+- TTO et COP
+- Advisory
+- Information de temps de l'action XMAN
+ 
+#Récupération des données radar des avions
+##Positions radar
+##Données ModS
+
+#Corrélation liste avion/positions radar
+#Affichage des vols sur la liste XMAN
+#Statut vol XMAN 
+Au cours du vol un avion à destination d’un aéroport XMAN rencontrera plusieurs statut:
+
+Les zones décrites ci dessous seront utilisées pour la gestion des advisory.
+
+##Eligibility Horizon Area : 
+A 550Nm de LHR le vol entre dans le volume « Eligibility Horizon », à partir de ce moment l’AMAN de Londres commence à calculer la sequence de tous les vols à l’intérieur de l’horizon et calcul une TTO au COP. La TTO au COP et le délai associé est transmise dans le fichier XML. Les vols ont un délai affecté mais ce délai n’est pas assez stable pour impliquer un advisory. Aucun advisory ne peut être affiché tant que le vol n’est pas entré dans le cercle des 350NM dit « Active Horizon ».
+
+##Display Area : 
+Lorsque les vols rentrent dans la « Display Area » ils sont affichés dans les listes de vol XMAN. Les vols en dehors de cette zone ne sont jamais affichés dans l’IHM. Sur les IHMs **SPVR OPS** du chef de salle**, **FMP** de l'ACDS et **SPVR Tech** du superviseur technique
+la liste des vols affiche tous les vols à l'intérieur de la display area. Sur les **CWP**, il est possible de visualiser tous les vols dans la display area, ou de filtrer selon d'autres critères definis par ailleurs.
+
+##Active Horizon Area : 
+A 350Nm pour Londres Heathrow **LHR** à l’entrée de l’ « Active Horizon Area », les vols ayant un délais Reims positif doivent être réduits. Un adivisory dependant de la quantité de délais à absorber est généré. Dans l’*Active Horizon Area*, les advisory sont poussés sur les secteurs. Une seule action area est définie par UAC et par flux XMAN.
+Si à l'interieur de l'Active Horizon Area le délais varie et devient superieur à 7min (soit un délai Reims positif) un advisory est généré.
+
+##Frozen Area :
+Dans ce volume les advisory ne peuvent plus être modifié quel que soit la variation du délais. 
+Aucun advisory ne peut etre évoluer dès lors que les avions entrent dans la **Frozen Area** 
+
+Dans le cas de Londres, l’AMAN utilise des données ETFMS jusqu’a la couverture radar du NATS ou il commence à utiliser des données radar. Le changement de type de données créé une marche de délais et une instabilité. Pour éviter de répercuter ce phénomène technique sur les positions de contrôle, le délais est figé avant que l’AMAN puisse disposer des données radar.
+
+# Definition des aires et volumes secteurs :
+Les volumes et aires définis ci dessus sont utilisés pour les fonctions de filtrage.
+
+##Aires d’intérêt secteur :
+ Le volume d’intérêt du secteur est le volume dans lequel les avions seront affichés.
+
+Ces aires d’intérêt sont définies par bloc secteur et par terrain XMAN.
+
+Elle permettant le filtrage géographique par bloc. Le filtrage sur l’aire secteur n’a aucun intérêt cette fonction n’est donc pas développée.
+
+Le filtrage « géographique » se fait sur l’aire intérêt secteur.
+En cas de regroupement l’aire d’intérêt des blocs regroupés et la somme des aires d’intérêt des secteurs regroupés.  
+
+##Volume intérêt secteur :
+ Le volume intérêt secteur est défini par l’aire d’intérêt secteur et les limites verticales du secteur.
+ 
+#Mecanisme amortisseur de délais
+##Principe de stabilité
+##
+
+
+
+>>>>>>> origin/master
