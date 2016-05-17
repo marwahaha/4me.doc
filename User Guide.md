@@ -64,6 +64,8 @@ Ce bouton cliquable indique l'état de fonctionnement de 4Me.
 Un clic sur le bouton d'information de service permet de connaitre plus en detail le type de dysfonctionnement détecté.
   
 ![Service Status Button](http://i.imgur.com/Zm9oMOWs.png) Fonctionnement normal
+
+RAJOUTER LE BOUTON Fonctionnement Dégradé
   
 ![Alarm Service Status](http://i.imgur.com/SWGfsrls.png) Dysfonctionnement détecté.
   
@@ -285,7 +287,8 @@ S’il n’y a pas de délai Reims, l’ensemble de la ligne de boutons est en g
 Lorsqu’un délai Reims est alloué, l’IHM XMAN propose une réduction de vitesse et le bouton associé devient orange  (à faire). 
 Les autres boutons deviennent blancs et sont cliquables.
 Le fond de l'étiquette passe en surveillance bleue pour souligner l'étiquette sur laquelle il est nécessaire d'agir.
-![Imgur](http://i.imgur.com/gR8lxYtls.png)
+
+![Imgur](http://i.imgur.com/gR8lxYtl.png)
  
 Si le contrôleur applique la réduction de vitesse proposée, il renseigne l’IHM XMAN en cliquant sur le bouton et celui-ci devient vert (réalisé). Dans ce cas les autres boutons redeviennent gris.
 ![Imgur](http://i.imgur.com/Z0MWy31l.png)
