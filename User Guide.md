@@ -12,12 +12,12 @@ Le client **SPVR OPS** est le client du Chef de Salle situé à droite de l'écr
 Le client de **SPVR Tech** est le client du superviseur technique, sa version est en cours de développement et son utilisation sera détaillée dans une prochaine version du manuel utilisateur.
 
 ##FMP
-Le client **SPVR OPS** est le client de l'ACDS ou de l'Extended ATC Planner, ces fonctionnalités sont limités dans la première version de 4Me, mais un développement futur permettra de spécialiser l'IHM FMP, pour répondre aux besoins d'échange d'informations entre la FMP et les CWP.
+Le client **SPVR OPS** est le client de l'ACDS ou de l'Extended ATC Planner, ses fonctionnalités sont limitées dans la première version de 4Me, mais un développement futur permettra de spécialiser l'IHM FMP, pour répondre aux besoins d'échange d'informations entre la FMP et les CWP.
 ##CWP
 Les clients **CWP** sont les clients "positions de contrôle". 
-Ils sont dipsosés en haut de l'acran radar du controleur organique et sont pilotés par une souris dédié. Il n'y a pas de clavier physique sur les positions de controle pour le pilotage de 4Me.
+Ils sont dipsosés en haut de l'acran radar du controleur organique et sont pilotés par une souris dédiée. Il n'y a pas de clavier physique sur les positions de controle pour le pilotage de 4Me.
 
-Chacune de position de contrôle ouverte filtre les services et les données en fonction des besoins opérationnels.
+Chacune des positions de contrôle ouvertes filtre les services et les données en fonction des besoins opérationnels.
 
 Les droits des utilisateurs sont différents pour chaque service et seront décrits dans le manuel utilisateur ci dessous.
 
