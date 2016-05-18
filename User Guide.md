@@ -55,7 +55,7 @@ Le coin supérieur droit *"Status Corner"* contient des boutons d'action de 4Me 
 #####Bouton Refresh :
 En cas de comportement anormal de 4Me le bouton **Refresh** permet de rafraîchir la page en cours. 
   
-La page est rafraîchie automatiquement toutes les 5 secondes (TBC)
+La page est rafraîchie automatiquement en permanence à chaque nouvelle action, ou chaque mise à jour des données.
 Si un comportement anormal de 4Me est détecté le premier réflexe de l'utilisateur est de rafraichir la page.Un clic sur le bouton **Refresh** permet dans la plupart des cas de résoudre le dysfonctionnement. En cas d’échec de la procédure, il est nécessaire d'en avertir le chef de salle.
   
 #####Bouton d'information de statut de service :
@@ -90,8 +90,8 @@ Le premier niveau est identique à celui décrit pour les CWP, le deuxième nive
 Ce niveau de détail permet une discussion plus facile avec le superviseur technique et améliore le niveau de compréhension de l'état du système par le chef de salle.
   
 - **SPVR TECH**: L'IHM du superviseur technique étant en cours de développement son fonctionnement sera décrit dans les prochaines versions du *manuel utilisateur 4Me*
-  
-![Imgur](http://i.imgur.com/bLaO3Kam.png)
+![Imgur](http://i.imgur.com/hXRDKZ0.png)
+
  
 Les pannes possibles et supervisées sont les suivantes : 
  
@@ -433,10 +433,10 @@ Lorsque la procédure **MCS** est activée, plus aucun advisory XMAN n'est affic
   
 ![Imgur](http://i.imgur.com/DNw0CKd.png)
   
-#ARCID
+#e4DP : ETFMS 4D Profile
 ##Présentation Générale
-Le service ARCID permet l'accès au profil 4D ETFMS, c'est à dire au plan de vol accepté par l'ETFMS.
-Un clic sur le service ARCID permet d'ouvrir la page ARCID.
+Le service e4DP permet l'accès au profil 4D ETFMS, c'est à dire au plan de vol accepté par l'ETFMS.
+Un clic sur le service e4DP permet d'ouvrir la page e4DP.
 Un premier volet de recherche permet l'accès au profil 4D ETFMS du vol.
 ##Fonctionnalités
 ###Champ recherche
@@ -449,8 +449,8 @@ Pour accéder au champ recherche, un clic sur *loupe* ou dans le champ *Search C
 ###Auto Completion
 ![Imgur](http://i.imgur.com/WIEuyDbm.png)
 Afin de faciliter la saisie du callsign un algorithme d'autocomplétion a été développé.
-Toutes les 30 secondes, 4Me ARCID fait une requète auprès de NM en chargeant toute la liste des avions dans le *traffic volume* **RMS**.
-4Me ARCID connaît donc tous les vols à l'interieur du traffic volume RMS. Dès la saisie du premier caractère, ARCID affiche la liste des vols comportant ce caractère. Un clic de sélection sur le vol recherché permet d'ouvrir le profil 4D ETFMS.
+Toutes les 30 secondes, 4Me e4DP fait une requète auprès de NM en chargeant toute la liste des avions dans le *traffic volume* **RMS**.
+4Me e4DP connaît donc tous les vols à l'interieur du traffic volume RMS. Dès la saisie du premier caractère, e4DP affiche la liste des vols comportant ce caractère. Un clic de sélection sur le vol recherché permet d'ouvrir le profil 4D ETFMS.
   
 Néanmoins il se peut que le vol recherché soit absent du traffic volume RMS. Dans ce cas, une saisie des 8 caractères maximum standard OACI sera nécessaire pour accéder au plan de vol.
 ###Result
@@ -461,7 +461,7 @@ L'onglet **History** garde en mémoire les dernières recherches effectuées à 
 Dès qu'un callsign a été saisi une fois sur un client 4Me, un clic de sélection suffit pour accéder au plan de vol de l'avion concerné.
   
 ###Point profile Presentation
-Le profil 4D ETFMS est affiché sur forme de table :
+Le profil 4D e4DP est affiché sur forme de table :
   
 |Estimate| Point| FL |Trend|
 |---|---|---|---|
