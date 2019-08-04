@@ -7,5 +7,5 @@ This repository stores all the 4Me Documentation.
 - 4Me MAPPING Cahier des charges (To be created)
 - 4Me XMAN+MAPPING User Guide
 - Glossary
-- Abreviation Lexicus
+- Abbreviation Lexicus
 
